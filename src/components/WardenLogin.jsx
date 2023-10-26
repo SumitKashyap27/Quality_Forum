@@ -1,10 +1,10 @@
 import React from "react";
-import Studentimg from "../assets/student.png"
+import Wardenimg from "../assets/warden.png"
 import { TextField, Button, Link } from "@mui/material";
 
 function StudentLogin(props) {
   return (
-    <main className="bg-white flex flex-col pl-5 pr-1.5" id="studentlogin">
+    <main className="bg-white flex flex-col pl-5 pr-1.5" id="wardenlogin">
       <section className="self-center flex w-full max-w-[1101px] flex-col mt-16 mb-2 max-md:max-w-full max-md:mt-10 justify-center items-center">
         <div className="flex max-w-full flex-col">
         <h1 className="text-black text-8xl max-w-[753px] max-md:max-w-full max-md:text-4xl mx-auto flex justify-center items-center">
@@ -16,12 +16,12 @@ function StudentLogin(props) {
             <div className="flex grow flex-col mt-0 max-md:mt-10">
               <img
                 loading="lazy"
-                src={Studentimg}
+                src={Wardenimg}
                 alt="Student"
                 className="pb-7 pt-10"
               />
             <h2 className="text-black text-3xl self-center ">
-                Student Login
+                Warden Login
             </h2>
             </div>
           </div>

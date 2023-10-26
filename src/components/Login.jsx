@@ -13,7 +13,6 @@ function Login(props) {
       <h1 className="text-black text-8xl max-w-[753px] max-md:max-w-full max-md:text-6xl mx-auto flex justify-center items-center">
         Quality Forum
       </h1>
-
       </header>
       <section className=" flex max-w-full mt-32 max-md:mt-10 md:justify-center text-center">
         <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
@@ -41,9 +40,12 @@ function Login(props) {
                 className="pb-7"
 
               />
-              <Button className="text-black text-6xl mt-8 max-md:text-2xl sm:text-center" variant="contained">
+              <Link to="/parentslogin">
+                <Button className="text-black text-6xl mt-8 max-md:text-2xl sm:text-center" variant="contained">
                 Login As Parents
-              </Button></div>
+                </Button>
+              </Link>
+              </div>
           </div>
           <div className="flex flex-col items-stretch max-md:w-full max-md:ml-0">
             <div className="flex grow flex-col mt-0 max-md:mt-10">
@@ -53,10 +55,12 @@ function Login(props) {
                 alt="Warden"
                 className="pb-7"
               />
-              
+              <Link to="/wardenlogin">
                 <Button className="text-black text-6xl mt-8 max-md:text-2xl sm:text-center" variant="contained">
                   Login As Warden
-                </Button></div>
+                </Button>
+               </Link> 
+               </div>
 
           </div>
         </div>
