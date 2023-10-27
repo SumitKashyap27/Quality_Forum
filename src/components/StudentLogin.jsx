@@ -46,14 +46,14 @@ function StudentLogin(props) {
                         type="password"
                         variant="outlined"
                       />
-                      <Link to="/dashboard" className="text-white no-underline text-6xl mt-8 max-md:text-2xl sm:text-center">
-                      <Button
-                        type="submit"
-                        variant="contained"
-                        className="rounded shadow-[0px_4px_4px_0px_rgba(0,0,0,0.30)] bg-sky-700 self-stretch flex w-full flex-col mt-9 px-5 py-6"
-                      >
-                          Login
-                      </Button>
+                      <Link to="/dashboard" className="text-white no-underline w-full">
+                        <Button
+                          type="submit"
+                          variant="contained"
+                          className="rounded shadow-[0px_4px_4px_0px_rgba(0,0,0,0.30)] bg-sky-700 flex w-full flex-col mt-9 px-14 py-6"
+                        >
+                        Login
+                        </Button>
                       </Link>
                     </div>
                     <Link href="#" underline="always" className="text-black text-right text-base font-medium mt-10 max-md:mr-px">
