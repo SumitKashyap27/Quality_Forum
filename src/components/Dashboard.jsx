@@ -16,6 +16,8 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+ 
+import StudentFeedback from './StudentFeedback';
 
 import Studentimg from '../assets/student.png'
 
@@ -128,8 +130,9 @@ function ResponsiveDrawer(props) {
       >
         <Toolbar />
           {currentTab === "Dashboard" && <>Dashboard</>}
-          {currentTab === "Feedback" && <>Feedback</>}
+          {currentTab === "Feedback" && <StudentFeedback/>}
           {/* {currentTab === "previous" && <>Previous</>} */}
+
       </Box>
     </Box>
   );
