@@ -8,10 +8,14 @@ import { styled, alpha } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import EditIcon from '@mui/icons-material/Edit';
+//import EditIcon from '@mui/icons-material/Edit';
+import SoupKitchenIcon from '@mui/icons-material/SoupKitchen';
 import Divider from '@mui/material/Divider';
-import ArchiveIcon from '@mui/icons-material/Archive';
-import FileCopyIcon from '@mui/icons-material/FileCopy';
+import FreeBreakfastIcon from '@mui/icons-material/FreeBreakfast';
+import LunchDiningIcon from '@mui/icons-material/LunchDining';
+import RestaurantIcon from '@mui/icons-material/Restaurant';
+//import ArchiveIcon from '@mui/icons-material/Archive';
+//import FileCopyIcon from '@mui/icons-material/FileCopy';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
@@ -23,7 +27,7 @@ const StyledMenu = styled((props) => (
       horizontal: 'right',
     }}
     transformOrigin={{
-      vertical: 'center',
+      vertical: 'left',
       horizontal: 'left',
     }}
     {...props}
@@ -158,8 +162,8 @@ const StudentFeedback=(props)=> {
                 <div className="flex w-[336px] max-w-full items-start gap-5 ml-4 self-start max-md:ml-2.5">
                   <div className="self-stretch flex flex-col">
                     <h3 className="text-neutral-700 text-xl">GIVE RATING</h3>
-
-                    <div>
+                    <div className='pt-5'>
+                      <div>
                       <Button
                         id="demo-customized-button"
                         aria-controls={open ? 'demo-customized-menu' : undefined}
@@ -170,8 +174,8 @@ const StudentFeedback=(props)=> {
                         onClick={handleClick}
                         endIcon={<KeyboardArrowDownIcon />}
                         sx={{
-                          backgroundColor: 'white',  // Set the background color to white
-                          color: 'black',            // Set the text color to black
+                          backgroundColor: 'white',
+                          color: 'black',            
                         }}
                       >
                         Monday
@@ -186,20 +190,22 @@ const StudentFeedback=(props)=> {
                         onClose={handleClose}
                       >
                       <MenuItem onClick={handleClose} disableRipple>
-                        <EditIcon />
+                        <FreeBreakfastIcon />
                         Breakfast
                       </MenuItem>
+                      <Divider sx={{ my: 0.5 }} />
                       <MenuItem onClick={handleClose} disableRipple>
-                        <FileCopyIcon />
+                        <SoupKitchenIcon />
                         Lunch
                       </MenuItem>
                       <Divider sx={{ my: 0.5 }} />
                       <MenuItem onClick={handleClose} disableRipple>
-                        <ArchiveIcon />
+                        <LunchDiningIcon />
                         Snacks
                       </MenuItem>
+                      <Divider sx={{ my: 0.5 }} />
                       <MenuItem onClick={handleClose} disableRipple>
-                        <MoreHorizIcon />
+                        <RestaurantIcon />
                         Dinner
                       </MenuItem>
                     </StyledMenu>
@@ -215,8 +221,8 @@ const StudentFeedback=(props)=> {
                         onClick={handleClick}
                         endIcon={<KeyboardArrowDownIcon />}
                         sx={{
-                          backgroundColor: 'white',  // Set the background color to white
-                          color: 'black',            // Set the text color to black
+                          backgroundColor: 'white', 
+                          color: 'black',            
                         }}
                       >
                         Tuesday
@@ -231,20 +237,22 @@ const StudentFeedback=(props)=> {
                         onClose={handleClose}
                       >
                       <MenuItem onClick={handleClose} disableRipple>
-                        <EditIcon />
+                        <FreeBreakfastIcon />
                         Breakfast
                       </MenuItem>
+                      <Divider sx={{ my: 0.5 }} />
                       <MenuItem onClick={handleClose} disableRipple>
-                        <FileCopyIcon />
+                        <SoupKitchenIcon />
                         Lunch
                       </MenuItem>
                       <Divider sx={{ my: 0.5 }} />
                       <MenuItem onClick={handleClose} disableRipple>
-                        <ArchiveIcon />
+                        <LunchDiningIcon />
                         Snacks
                       </MenuItem>
+                      <Divider sx={{ my: 0.5 }} />
                       <MenuItem onClick={handleClose} disableRipple>
-                        <MoreHorizIcon />
+                        <RestaurantIcon />
                         Dinner
                       </MenuItem>
                     </StyledMenu>
@@ -260,8 +268,8 @@ const StudentFeedback=(props)=> {
                         onClick={handleClick}
                         endIcon={<KeyboardArrowDownIcon />}
                         sx={{
-                          backgroundColor: 'white',  // Set the background color to white
-                          color: 'black',            // Set the text color to black
+                          backgroundColor: 'white',  
+                          color: 'black',            
                         }}
                       >
                         Wednesday
@@ -276,20 +284,23 @@ const StudentFeedback=(props)=> {
                         onClose={handleClose}
                       >
                       <MenuItem onClick={handleClose} disableRipple>
-                        <EditIcon />
+                        <FreeBreakfastIcon />
                         Breakfast
-                      </MenuItem>
-                      <MenuItem onClick={handleClose} disableRipple>
-                        <FileCopyIcon />
-                        Lunch
                       </MenuItem>
                       <Divider sx={{ my: 0.5 }} />
                       <MenuItem onClick={handleClose} disableRipple>
-                        <ArchiveIcon />
+                        <SoupKitchenIcon />
+                        Lunch
+                      </MenuItem>
+                      <Divider sx={{ my: 0.5 }} />
+                      <Divider sx={{ my: 0.5 }} />
+                      <MenuItem onClick={handleClose} disableRipple>
+                        <LunchDiningIcon />
                         Snacks
                       </MenuItem>
+                      <Divider sx={{ my: 0.5 }} />
                       <MenuItem onClick={handleClose} disableRipple>
-                        <MoreHorizIcon />
+                        <RestaurantIcon />
                         Dinner
                       </MenuItem>
                     </StyledMenu>
@@ -305,8 +316,8 @@ const StudentFeedback=(props)=> {
                         onClick={handleClick}
                         endIcon={<KeyboardArrowDownIcon />}
                         sx={{
-                          backgroundColor: 'white',  // Set the background color to white
-                          color: 'black',            // Set the text color to black
+                          backgroundColor: 'white',  
+                          color: 'black',           
                         }}
                       >
                         Thursday
@@ -321,28 +332,30 @@ const StudentFeedback=(props)=> {
                         onClose={handleClose}
                       >
                       <MenuItem onClick={handleClose} disableRipple>
-                        <EditIcon />
+                        <FreeBreakfastIcon />
                         Breakfast
                       </MenuItem>
+                      <Divider sx={{ my: 0.5 }} />
                       <MenuItem onClick={handleClose} disableRipple>
-                        <FileCopyIcon />
+                        <SoupKitchenIcon />
                         Lunch
                       </MenuItem>
                       <Divider sx={{ my: 0.5 }} />
                       <MenuItem onClick={handleClose} disableRipple>
-                        <ArchiveIcon />
+                        <LunchDiningIcon/>
                         Snacks
                       </MenuItem>
+                      <Divider sx={{ my: 0.5 }} />
                       <MenuItem onClick={handleClose} disableRipple>
-                        <MoreHorizIcon />
+                        <RestaurantIcon />
                         Dinner
                       </MenuItem>
                     </StyledMenu>
                   </div>
                   <div>
                       <Button
-                        id="demo-customized-button"
-                        aria-controls={open ? 'demo-customized-menu' : undefined}
+                        id="customized-button"
+                        aria-controls={open ? 'customized-menu' : undefined}
                         aria-haspopup="true"
                         aria-expanded={open ? 'true' : undefined}
                         variant="contained"
@@ -350,8 +363,8 @@ const StudentFeedback=(props)=> {
                         onClick={handleClick}
                         endIcon={<KeyboardArrowDownIcon />}
                         sx={{
-                          backgroundColor: 'white',  // Set the background color to white
-                          color: 'black',            // Set the text color to black
+                          backgroundColor: 'white',
+                          color: 'black',            
                         }}
                       >
                         Friday
@@ -366,20 +379,22 @@ const StudentFeedback=(props)=> {
                         onClose={handleClose}
                       >
                       <MenuItem onClick={handleClose} disableRipple>
-                        <EditIcon />
+                        <FreeBreakfastIcon />
                         Breakfast
                       </MenuItem>
+                      <Divider sx={{ my: 0.5 }} />
                       <MenuItem onClick={handleClose} disableRipple>
-                        <FileCopyIcon />
+                        <SoupKitchenIcon />
                         Lunch
                       </MenuItem>
                       <Divider sx={{ my: 0.5 }} />
                       <MenuItem onClick={handleClose} disableRipple>
-                        <ArchiveIcon />
+                        <LunchDiningIcon />
                         Snacks
                       </MenuItem>
+                      <Divider sx={{ my: 0.5 }} />
                       <MenuItem onClick={handleClose} disableRipple>
-                        <MoreHorizIcon />
+                        <RestaurantIcon />
                         Dinner
                       </MenuItem>
                     </StyledMenu>
@@ -411,20 +426,22 @@ const StudentFeedback=(props)=> {
                         onClose={handleClose}
                       >
                       <MenuItem onClick={handleClose} disableRipple>
-                        <EditIcon />
+                        <FreeBreakfastIcon />
                         Breakfast
                       </MenuItem>
+                      <Divider sx={{ my: 0.5 }} />
                       <MenuItem onClick={handleClose} disableRipple>
-                        <FileCopyIcon />
+                        <SoupKitchenIcon />
                         Lunch
                       </MenuItem>
                       <Divider sx={{ my: 0.5 }} />
                       <MenuItem onClick={handleClose} disableRipple>
-                        <ArchiveIcon />
+                        <LunchDiningIcon />
                         Snacks
                       </MenuItem>
+                      <Divider sx={{ my: 0.5 }} />
                       <MenuItem onClick={handleClose} disableRipple>
-                        <MoreHorizIcon />
+                        <RestaurantIcon />
                         Dinner
                       </MenuItem>
                     </StyledMenu>
@@ -440,8 +457,8 @@ const StudentFeedback=(props)=> {
                         onClick={handleClick}
                         endIcon={<KeyboardArrowDownIcon />}
                         sx={{
-                          backgroundColor: 'white',  // Set the background color to white
-                          color: 'black',            // Set the text color to black
+                          backgroundColor: 'white',
+                          color: 'black',            
                         }}
                       >
                         Sunday
@@ -456,24 +473,32 @@ const StudentFeedback=(props)=> {
                         onClose={handleClose}
                       >
                       <MenuItem onClick={handleClose} disableRipple>
-                        <EditIcon />
-                        Edit
-                      </MenuItem>
-                      <MenuItem onClick={handleClose} disableRipple>
-                        <FileCopyIcon />
-                        Duplicate
+                        <FreeBreakfastIcon />
+                        Breakfast 
                       </MenuItem>
                       <Divider sx={{ my: 0.5 }} />
                       <MenuItem onClick={handleClose} disableRipple>
-                        <ArchiveIcon />
-                        Archive
+                        <SoupKitchenIcon />
+                        Lunch
                       </MenuItem>
+                      
+                      <Divider sx={{ my: 0.5 }} />
                       <MenuItem onClick={handleClose} disableRipple>
-                        <MoreHorizIcon />
-                        More
+                        <LunchDiningIcon />
+                        Snacks
+                      </MenuItem>
+                      <Divider sx={{ my: 0.5 }} />
+                      <MenuItem onClick={handleClose} disableRipple>
+                        <RestaurantIcon />
+                        Dinner
                       </MenuItem>
                     </StyledMenu>
-                  
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </form>
+            </div> 
             <div className="flex flex-col items-stretch w-6/12 ml-5 max-md:w-full max-md:ml-0">
               <div className="border shadow-sm bg-white flex grow flex-col w-full mx-auto px-5 py-8 rounded-xl border-solid border-black max-md:max-w-full max-md:mt-10">
                 <div className="self-center flex w-[482px] max-w-full flex-col">
