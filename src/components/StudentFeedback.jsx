@@ -1,8 +1,10 @@
-import React from 'react'
+import React,{ useState } from 'react'
+import StarRatings from 'react-star-ratings';
 import internetsy from "../assets/wifi.png";
 import washing from "../assets/washing.png";
 import food from "../assets/food.png";
 import sweep from "../assets/sweep.png"
+
 
 import { styled, alpha } from '@mui/material/styles';
 import Button from '@mui/material/Button';
@@ -60,6 +62,8 @@ const StyledMenu = styled((props) => (
   },
 }));
 
+
+
 const StudentFeedback=(props)=> {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -68,6 +72,12 @@ const StudentFeedback=(props)=> {
   };
   const handleClose = () => {
     setAnchorEl(null);
+  };
+  const [breakfastRating, setBreakfastRating] = useState(0); // Initialize the rating as 0
+
+  // Function to handle rating change
+  const handleBreakfastRatingChange = (newRating) => {
+    setBreakfastRating(newRating);
   };
   return (
     <main className="bg-white flex flex-col pr-px">
@@ -192,6 +202,13 @@ const StudentFeedback=(props)=> {
                       <MenuItem onClick={handleClose} disableRipple>
                         <FreeBreakfastIcon />
                         Breakfast
+                        <StarRatings
+                          rating={breakfastRating}
+                          starRatedColor="blue"
+                          changeRating={handleBreakfastRatingChange}
+                          numberOfStars={5} // You can adjust the number of stars as needed
+                          name='breakfast-rating'
+                        />
                       </MenuItem>
                       <Divider sx={{ my: 0.5 }} />
                       <MenuItem onClick={handleClose} disableRipple>
@@ -513,4 +530,4 @@ const StudentFeedback=(props)=> {
     </main>
   );
 }
-export default StudentFeedback
+export default StudentFeedback;
