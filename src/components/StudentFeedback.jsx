@@ -66,7 +66,7 @@ const StudentFeedback = (props) => {
                   className="aspect-[1.41] object-contain object-center w-[100px] stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
                 />
               </button>
-              {isMessFeedbackVisible && <MessFeedback />}
+
             </div>
             <div className="flex drop-shadow-xl flex-col items-stretch w-3/12 ml-2 max-md:w-full max-md:ml-0">
               <button
@@ -87,7 +87,7 @@ const StudentFeedback = (props) => {
                   className="aspect-[1.41] object-contain object-center w-[100px] stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
                 />
               </button>
-              {isSweeperServiceVisible && <SweeperService />}
+              
             </div>
             <div className="flex drop-shadow-xl flex-col items-stretch w-3/12 ml-2 max-md:w-full max-md:ml-0">
               <button
@@ -108,7 +108,7 @@ const StudentFeedback = (props) => {
                   className="aspect-[1.41] object-contain object-center w-[100px] stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
                 />
               </button>
-              {isLaundryServiceVisible && <LaundryService />}
+             
             </div>
             <div className="flex flex-col drop-shadow-xl items-stretch w-3/12 ml-2 max-md:w-full max-md:ml-0">
               <button
@@ -129,8 +129,18 @@ const StudentFeedback = (props) => {
                   className="aspect-[1.41] object-contain object-center w-[100px] stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
                 />
               </button>
-              {isWifiServiceVisible && <WifiService />}
+             
+
+
             </div>
+          </div>
+        </section>
+        <section>
+          <div>
+          {isMessFeedbackVisible && <MessFeedback />}
+          {isSweeperServiceVisible && <SweeperService />}
+          {isLaundryServiceVisible && <LaundryService />}
+          {isWifiServiceVisible && <WifiService />}
           </div>
         </section>
       </header>
