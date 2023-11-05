@@ -55,13 +55,12 @@ function Login(props) {
                 alt="Warden"
                 className="pb-7"
               />
-              <Link to="/wardenlogin">
+              <Link to="/administrationlogin">
                 <Button className="text-black text-6xl mt-8 max-md:text-2xl sm:text-center" variant="contained">
-                  Login As Warden
+                  Login As Administration
                 </Button>
                </Link> 
-               </div>
-
+            </div>
           </div>
         </div>
       </section>

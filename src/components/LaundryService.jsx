@@ -1,17 +1,13 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Rating from "@mui/material/Rating";
 import Button from "@mui/material/Button";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import SoupKitchenIcon from "@mui/icons-material/SoupKitchen";
-import FreeBreakfastIcon from "@mui/icons-material/FreeBreakfast";
-import LunchDiningIcon from "@mui/icons-material/LunchDining";
-import RestaurantIcon from "@mui/icons-material/Restaurant";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+//import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const LaundryService = () => {
   const [anchorEl, setAnchorEl] = useState(null);
-  const [value, setValue] = React.useState(1);
+  const [behaviorRating, setBehaviorRating] = React.useState(1);
+  const [regularityRating, setRegularityRating] = React.useState(1);
+  const [cleanlinessRating, setCleanlinessRating] = React.useState(1);
 
   const handleOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -20,81 +16,6 @@ const LaundryService = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
-  const menu = (
-    <Menu
-      id="dropdown-menu"
-      anchorEl={anchorEl}
-      open={Boolean(anchorEl)}
-      onClose={handleClose}
-      transformOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      anchorOrigin={{
-        vertical: "bottom",
-        horizontal: "right",
-      }}
-      getContentAnchorEl={null}
-    >
-      <MenuItem
-        onClick={handleClose}
-        className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
-      >
-        <FreeBreakfastIcon />
-        Breakfast
-        <Rating
-          name="simple-controlled"
-          value={value}
-          onChange={(event, newValue) => {
-            setValue(newValue);
-          }}
-        />
-      </MenuItem>
-      <MenuItem
-        onClick={handleClose}
-        className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
-      >
-        <SoupKitchenIcon />
-        Lunch
-        <Rating
-          name="simple-controlled"
-          value={value}
-          onChange={(event, newValue) => {
-            setValue(newValue);
-          }}
-        />
-      </MenuItem>
-      <MenuItem
-        onClick={handleClose}
-        className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
-      >
-        <LunchDiningIcon />
-        Snacks
-        <Rating
-          name="simple-controlled"
-          value={value}
-          onChange={(event, newValue) => {
-            setValue(newValue);
-          }}
-        />
-      </MenuItem>
-      <MenuItem
-        onClick={handleClose}
-        className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
-      >
-        <RestaurantIcon />
-        Dinner
-        <Rating
-          name="simple-controlled"
-          value={value}
-          onChange={(event, newValue) => {
-            setValue(newValue);
-          }}
-        />
-      </MenuItem>
-    </Menu>
-  );
 
   return (
     <section className="self-center w-full mt-10 max-md:max-w-full max-md:mt-8">
@@ -111,11 +32,16 @@ const LaundryService = () => {
                     onClick={handleOpen}
                     variant="contained"
                     color="primary"
-                    endIcon={<ExpandMoreIcon />}
-                    className=" mt-11  mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
+                    className="mt-11  mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
                   >
-                    MONDAY
-                    {menu}
+                    MACHINE CONDITION
+                    <Rating
+                      name="behavior-rating"
+                      value={behaviorRating}
+                      onChange={(event, newValue) => {
+                        setBehaviorRating(newValue);
+                      }}
+                    />
                   </Button>
                 </div>
                 <div className="relative inline-block text-left pt-2">
@@ -125,12 +51,17 @@ const LaundryService = () => {
                     onClick={handleOpen}
                     variant="contained"
                     color="primary"
-                    endIcon={<ExpandMoreIcon />}
-                    className=" mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
+                    className="mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
                   >
-                    TUESDAY
+                    REGULARITY
+                    <Rating
+                      name="regularity-rating"
+                      value={regularityRating}
+                      onChange={(event, newValue) => {
+                        setRegularityRating(newValue);
+                      }}
+                    />
                   </Button>
-                  {menu}
                 </div>
                 <div className="relative inline-block text-left pt-2">
                   <Button
@@ -139,68 +70,17 @@ const LaundryService = () => {
                     onClick={handleOpen}
                     variant="contained"
                     color="primary"
-                    endIcon={<ExpandMoreIcon />}
-                    className=" mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
+                    className="mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark-bg-blue-600"
                   >
-                    WEDNESDAY
+                    CLEANLINESS
+                    <Rating
+                      name="cleanliness-rating"
+                      value={cleanlinessRating}
+                      onChange={(event, newValue) => {
+                        setCleanlinessRating(newValue);
+                      }}
+                    />
                   </Button>
-                  {menu}
-                </div>
-                <div className="relative inline-block text-left pt-2">
-                  <Button
-                    aria-controls="dropdown-menu"
-                    aria-haspopup="true"
-                    onClick={handleOpen}
-                    variant="contained"
-                    color="primary"
-                    endIcon={<ExpandMoreIcon />}
-                    className=" mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
-                  >
-                    THURSDAY
-                  </Button>
-                  {menu}
-                </div>
-                <div className="relative inline-block text-left pt-2">
-                  <Button
-                    aria-controls="dropdown-menu"
-                    aria-haspopup="true"
-                    onClick={handleOpen}
-                    variant="contained"
-                    color="primary"
-                    endIcon={<ExpandMoreIcon />}
-                    className=" mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
-                  >
-                    FRIDAY
-                  </Button>
-                  {menu}
-                </div>
-                <div className="relative inline-block text-left pt-2">
-                  <Button
-                    aria-controls="dropdown-menu"
-                    aria-haspopup="true"
-                    onClick={handleOpen}
-                    variant="contained"
-                    color="primary"
-                    endIcon={<ExpandMoreIcon />}
-                    className=" mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
-                  >
-                    SATURDAY
-                  </Button>
-                  {menu}
-                </div>
-                <div className="relative inline-block text-left pt-2">
-                  <Button
-                    aria-controls="dropdown-menu"
-                    aria-haspopup="true"
-                    onClick={handleOpen}
-                    variant="contained"
-                    color="primary"
-                    endIcon={<ExpandMoreIcon />}
-                    className=" mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
-                  >
-                    SUNDAY
-                  </Button>
-                  {menu}
                 </div>
               </div>
             </div>

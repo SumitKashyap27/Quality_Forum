@@ -11,7 +11,17 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const MessFeedback = () => {
   const [anchorEl, setAnchorEl] = useState(null);
-  const [value, setValue] = React.useState(1);
+
+  // Create separate state variables for each day's rating
+  const [ratings, setRatings] = useState({
+    monday: 1,
+    tuesday: 1,
+    wednesday: 1,
+    thursday: 1,
+    friday: 1,
+    saturday: 1,
+    sunday: 1,
+  });
 
   const handleOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -45,9 +55,9 @@ const MessFeedback = () => {
         Breakfast
         <Rating
           name="simple-controlled"
-          value={value}
+          value={ratings.monday}
           onChange={(event, newValue) => {
-            setValue(newValue);
+            setRatings({ ...ratings, monday: newValue });
           }}
         />
       </MenuItem>
@@ -59,9 +69,9 @@ const MessFeedback = () => {
         Lunch
         <Rating
           name="simple-controlled"
-          value={value}
+          value={ratings.tuesday}
           onChange={(event, newValue) => {
-            setValue(newValue);
+            setRatings({ ...ratings, tuesday: newValue });
           }}
         />
       </MenuItem>
@@ -73,9 +83,9 @@ const MessFeedback = () => {
         Snacks
         <Rating
           name="simple-controlled"
-          value={value}
+          value={ratings.wednesday}
           onChange={(event, newValue) => {
-            setValue(newValue);
+            setRatings({ ...ratings, wednesday: newValue });
           }}
         />
       </MenuItem>
@@ -87,9 +97,9 @@ const MessFeedback = () => {
         Dinner
         <Rating
           name="simple-controlled"
-          value={value}
+          value={ratings.thursday}
           onChange={(event, newValue) => {
-            setValue(newValue);
+            setRatings({ ...ratings, thursday: newValue });
           }}
         />
       </MenuItem>
@@ -97,7 +107,7 @@ const MessFeedback = () => {
   );
 
   return (
-    <section className="self-center  w-full mt-10 max-md:max-w-full max-md:mt-8">
+    <section className="self-center w-full mt-10 max-md:max-w-full max-md:mt-8">
       <div className="flex h-[420px] max-md:flex-col max-md:items-stretch max-md:gap-0">
         <div className="flex flex-col items-stretch w-6/12 max-md:w-full max-md:ml-0">
           <form className="border shadow-sm bg-white flex grow flex-col w-full mx-auto pt-9 px-5 rounded-xl border-solid border-black max-md:max-w-full max-md:mt-10">
@@ -106,13 +116,13 @@ const MessFeedback = () => {
                 <h3 className="text-neutral-700 text-xl mb-4">GIVE RATING</h3>
                 <div className="relative inline-block text-left">
                   <Button
-                    aria-controls="dropdown-menu"
+                    aria-controls="breakfast-menu"
                     aria-haspopup="true"
                     onClick={handleOpen}
                     variant="contained"
                     color="primary"
                     endIcon={<ExpandMoreIcon />}
-                    className=" mt-11  mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
+                    className="mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
                   >
                     MONDAY
                     {menu}
@@ -120,13 +130,13 @@ const MessFeedback = () => {
                 </div>
                 <div className="relative inline-block text-left pt-2">
                   <Button
-                    aria-controls="dropdown-menu"
+                    aria-controls="lunch-menu"
                     aria-haspopup="true"
                     onClick={handleOpen}
                     variant="contained"
                     color="primary"
                     endIcon={<ExpandMoreIcon />}
-                    className=" mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
+                    className="mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
                   >
                     TUESDAY
                   </Button>
@@ -134,13 +144,13 @@ const MessFeedback = () => {
                 </div>
                 <div className="relative inline-block text-left pt-2">
                   <Button
-                    aria-controls="dropdown-menu"
+                    aria-controls="snacks-menu"
                     aria-haspopup="true"
                     onClick={handleOpen}
                     variant="contained"
                     color="primary"
                     endIcon={<ExpandMoreIcon />}
-                    className=" mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
+                    className="mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
                   >
                     WEDNESDAY
                   </Button>
@@ -148,13 +158,13 @@ const MessFeedback = () => {
                 </div>
                 <div className="relative inline-block text-left pt-2">
                   <Button
-                    aria-controls="dropdown-menu"
+                    aria-controls="dinner-menu"
                     aria-haspopup="true"
                     onClick={handleOpen}
                     variant="contained"
                     color="primary"
                     endIcon={<ExpandMoreIcon />}
-                    className=" mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
+                    className="mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
                   >
                     THURSDAY
                   </Button>
@@ -162,13 +172,13 @@ const MessFeedback = () => {
                 </div>
                 <div className="relative inline-block text-left pt-2">
                   <Button
-                    aria-controls="dropdown-menu"
+                    aria-controls="dinner-menu"
                     aria-haspopup="true"
                     onClick={handleOpen}
                     variant="contained"
                     color="primary"
                     endIcon={<ExpandMoreIcon />}
-                    className=" mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
+                    className="mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
                   >
                     FRIDAY
                   </Button>
@@ -176,13 +186,13 @@ const MessFeedback = () => {
                 </div>
                 <div className="relative inline-block text-left pt-2">
                   <Button
-                    aria-controls="dropdown-menu"
+                    aria-controls="dinner-menu"
                     aria-haspopup="true"
                     onClick={handleOpen}
                     variant="contained"
                     color="primary"
                     endIcon={<ExpandMoreIcon />}
-                    className=" mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
+                    className="mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
                   >
                     SATURDAY
                   </Button>
@@ -190,13 +200,13 @@ const MessFeedback = () => {
                 </div>
                 <div className="relative inline-block text-left pt-2">
                   <Button
-                    aria-controls="dropdown-menu"
+                    aria-controls="dinner-menu"
                     aria-haspopup="true"
                     onClick={handleOpen}
                     variant="contained"
                     color="primary"
                     endIcon={<ExpandMoreIcon />}
-                    className=" mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
+                    className="mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
                   >
                     SUNDAY
                   </Button>
@@ -206,7 +216,7 @@ const MessFeedback = () => {
             </div>
           </form>
         </div>
-        <div className="flex  flex-col items-stretch w-6/12 ml-5 max-md:w-full max-md:ml-0">
+        <div className="flex flex-col items-stretch w-6/12 ml-5 max-md:w-full max-md:ml-0">
           <div className="border h-[420px] shadow-sm bg-white flex grow flex-col w-full mx-auto px-5 py-8 rounded-xl border-solid border-black max-md:max-w-full max-md:mt-10">
             <div className="self-center flex w-[482px] max-w-full flex-col">
               <h3 className="text-neutral-700 text-xl">Comments/Suggestion</h3>
@@ -224,4 +234,5 @@ const MessFeedback = () => {
     </section>
   );
 };
+
 export default MessFeedback;

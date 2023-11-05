@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import Rating from "@mui/material/Rating";
 import Button from "@mui/material/Button";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+//import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const SweeperService = () => {
   const [anchorEl, setAnchorEl] = useState(null);
-  const [value, setValue] = React.useState(1);
+  const [behaviorRating, setBehaviorRating] = React.useState(1);
+  const [regularityRating, setRegularityRating] = React.useState(1);
+  const [cleanlinessRating, setCleanlinessRating] = React.useState(1);
 
   const handleOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -14,16 +16,6 @@ const SweeperService = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
-  const rating = (
-    <Rating
-    name="simple-controlled"
-    value={value}
-    onChange={(event, newValue) => {
-      setValue(newValue);
-    }}
-  />
-  );
 
   return (
     <section className="self-center w-full mt-10 max-md:max-w-full max-md:mt-8">
@@ -40,11 +32,16 @@ const SweeperService = () => {
                     onClick={handleOpen}
                     variant="contained"
                     color="primary"
-                    endIcon={<ExpandMoreIcon />}
-                    className=" mt-11  mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
+                    className="mt-11  mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
                   >
-                    BEHAVIOUR
-                    {rating}
+                    BEHAVIOR
+                    <Rating
+                      name="behavior-rating"
+                      value={behaviorRating}
+                      onChange={(event, newValue) => {
+                        setBehaviorRating(newValue);
+                      }}
+                    />
                   </Button>
                 </div>
                 <div className="relative inline-block text-left pt-2">
@@ -54,12 +51,17 @@ const SweeperService = () => {
                     onClick={handleOpen}
                     variant="contained"
                     color="primary"
-                    endIcon={<ExpandMoreIcon />}
-                    className=" mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
+                    className="mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
                   >
                     REGULARITY
+                    <Rating
+                      name="regularity-rating"
+                      value={regularityRating}
+                      onChange={(event, newValue) => {
+                        setRegularityRating(newValue);
+                      }}
+                    />
                   </Button>
-                  {rating}
                 </div>
                 <div className="relative inline-block text-left pt-2">
                   <Button
@@ -68,12 +70,17 @@ const SweeperService = () => {
                     onClick={handleOpen}
                     variant="contained"
                     color="primary"
-                    endIcon={<ExpandMoreIcon />}
-                    className=" mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
+                    className="mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark-bg-blue-600"
                   >
                     CLEANLINESS
+                    <Rating
+                      name="cleanliness-rating"
+                      value={cleanlinessRating}
+                      onChange={(event, newValue) => {
+                        setCleanlinessRating(newValue);
+                      }}
+                    />
                   </Button>
-                  {rating}
                 </div>
               </div>
             </div>

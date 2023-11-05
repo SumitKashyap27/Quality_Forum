@@ -1,11 +1,10 @@
-
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import StudentLogin from "./components/StudentLogin";
 import ParentsLogin from "./components/ParentsLogin"
-import WardenLogin from "./components/WardenLogin"
+//import WardenLogin from "./components/WardenLogin"
 import Dashboard from "./components/Dashboard";
+import AdministrationLogin from "./components/AdministrationLogin";
 function App() {
   return (
     <BrowserRouter>
@@ -14,7 +13,7 @@ function App() {
 
         <Route path="/studentlogin" element={<StudentLogin/>}/>
         <Route path="/parentslogin" element={<ParentsLogin/>}/>
-        <Route path="/wardenlogin" element={<WardenLogin/>}/>
+        <Route path="/administrationlogin" element={<AdministrationLogin/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
       </Routes>
     </BrowserRouter>
