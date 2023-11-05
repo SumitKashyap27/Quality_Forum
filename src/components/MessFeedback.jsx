@@ -97,10 +97,10 @@ const MessFeedback = () => {
   );
 
   return (
-    <section className="self-center w-full mt-10 max-md:max-w-full max-md:mt-8">
-      <div className="flex max-md:flex-col max-md:items-stretch max-md:gap-0">
+    <section className="self-center  w-full mt-10 max-md:max-w-full max-md:mt-8">
+      <div className="flex h-[420px] max-md:flex-col max-md:items-stretch max-md:gap-0">
         <div className="flex flex-col items-stretch w-6/12 max-md:w-full max-md:ml-0">
-          <form className="border shadow-sm bg-white flex grow flex-col w-full mx-auto pt-9 pb-20 px-5 rounded-xl border-solid border-black max-md:max-w-full max-md:mt-10">
+          <form className="border shadow-sm bg-white flex grow flex-col w-full mx-auto pt-9 px-5 rounded-xl border-solid border-black max-md:max-w-full max-md:mt-10">
             <div className="flex w-[336px] max-w-full items-start gap-5 ml-4 self-start max-md:ml-2.5">
               <div className="self-stretch flex flex-col">
                 <h3 className="text-neutral-700 text-xl mb-4">GIVE RATING</h3>
@@ -206,8 +206,8 @@ const MessFeedback = () => {
             </div>
           </form>
         </div>
-        <div className="flex flex-col items-stretch w-6/12 ml-5 max-md:w-full max-md:ml-0">
-          <div className="border shadow-sm bg-white flex grow flex-col w-full mx-auto px-5 py-8 rounded-xl border-solid border-black max-md:max-w-full max-md:mt-10">
+        <div className="flex  flex-col items-stretch w-6/12 ml-5 max-md:w-full max-md:ml-0">
+          <div className="border h-[420px] shadow-sm bg-white flex grow flex-col w-full mx-auto px-5 py-8 rounded-xl border-solid border-black max-md:max-w-full max-md:mt-10">
             <div className="self-center flex w-[482px] max-w-full flex-col">
               <h3 className="text-neutral-700 text-xl">Comments/Suggestion</h3>
               <div className="bg-zinc-300 flex w-full h-[250px] flex-col mt-7 rounded-sm self-start max-md:max-w-full">

@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import Rating from "@mui/material/Rating";
 import Button from "@mui/material/Button";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import SoupKitchenIcon from "@mui/icons-material/SoupKitchen";
-import FreeBreakfastIcon from "@mui/icons-material/FreeBreakfast";
-import LunchDiningIcon from "@mui/icons-material/LunchDining";
-import RestaurantIcon from "@mui/icons-material/Restaurant";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const SweeperService = () => {

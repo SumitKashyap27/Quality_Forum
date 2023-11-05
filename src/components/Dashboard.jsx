@@ -60,8 +60,8 @@ function ResponsiveDrawer(props) {
       </List>
       <Divider />
       <Divider />
-      <div className='pb-0'>
-        <h2>Quality Forum</h2>
+      <div className="text-black text-2xl mt-[255px] self-start max-md:mt-10 flex justify-center">
+              Quality Forum
       </div>
     </div>
   );
@@ -89,7 +89,7 @@ function ResponsiveDrawer(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Responsive drawer 
+            QUALITY FORUM
           </Typography>
         </Toolbar>
       </AppBar>
