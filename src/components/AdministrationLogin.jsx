@@ -3,7 +3,7 @@ import Wardenimg from "../assets/warden.png"
 import { TextField, Button, } from "@mui/material";
 import { Link } from "react-router-dom";
 
-function StudentLogin(props) {
+function AdministrationLogin(props) {
   return (
     <main className="bg-white flex flex-col pl-5 pr-1.5" id="administrationlogin">
       <section className="self-center flex w-full max-w-[1101px] flex-col mt-16 mb-2 max-md:max-w-full max-md:mt-10 justify-center items-center">
@@ -46,7 +46,7 @@ function StudentLogin(props) {
                         type="password"
                         variant="outlined"
                       />
-                      <Link to="/administrationdashboard" className="text-white no-underline w-full">
+                      <Link to="/administrationdrawer" className="text-white no-underline w-full">
                         <Button
                           type="submit"
                           variant="contained"
@@ -76,4 +76,4 @@ function StudentLogin(props) {
   );
 }
 
-export default StudentLogin;
+export default AdministrationLogin;

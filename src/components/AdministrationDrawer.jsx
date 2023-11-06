@@ -16,14 +16,12 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
- 
-import StudentFeedback from './StudentFeedback';
-
-import Studentimg from '../assets/student.png'
+import Wardenimg from '../assets/warden.png'
+import AddStudent from './AddStudent';
 
 const drawerWidth = 240;
 
-function AdministrationDashboard(props) {
+function AdministrationDrawer(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [currentTab,setCurrentTab] = React.useState("Dashboard")
@@ -40,27 +38,27 @@ function AdministrationDashboard(props) {
       <img
         className='pt-0 mt-0 py-2 px-4'
         loading="lazy"
-        src={Studentimg}
+        src={Wardenimg}
         alt="Student"
         />
     <h3 className='pt-2 pb-3  text-center'>Name</h3>
 
     <Divider />
       <List>
-        {['Dashboard', 'Feedback'].map((text, index) => (
+        {['Dashboard', 'AddStudents'].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton onClick={()=>setCurrentTab(text)}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
+          <ListItemButton onClick={()=>setCurrentTab(text)}>
+            <ListItemIcon>
+              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+            </ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItemButton>
+        </ListItem>
         ))}
       </List>
       <Divider />
       <Divider />
-      <div className="text-black text-2xl mt-[255px] self-start max-md:mt-10 flex justify-center">
+      <div className="text-black text-2xl mt-[245px]  self-start max-md:mt-10 flex justify-center">
               Quality Forum
       </div>
     </div>
@@ -69,7 +67,7 @@ function AdministrationDashboard(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }} id="administrationdashboard">
+    <Box sx={{ display: 'flex' }} id="administrationdrawer">
       <CssBaseline />
       <AppBar
         position="fixed"
@@ -129,17 +127,15 @@ function AdministrationDashboard(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
-          {currentTab === "administrationdashboard" && <>Dashboard</>}
-          {currentTab === "Feedback" && <StudentFeedback/>}
-          {/* {currentTab === "previous" && <>Previous</>} */}
-
+        {currentTab === "Dashboard" && <>Dashboard</>}
+        {currentTab === "AddStudents" && <AddStudent/>}
       </Box>
     </Box>
   );
 }
 
-AdministrationDashboard.propTypes = {
+AdministrationDrawer.propTypes = {
   window: PropTypes.func,
 };
 
-export default AdministrationDashboard;
+export default AdministrationDrawer;

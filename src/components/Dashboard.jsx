@@ -60,7 +60,7 @@ function ResponsiveDrawer(props) {
       </List>
       <Divider />
       <Divider />
-      <div className="text-black text-2xl mt-[255px] self-start max-md:mt-10 flex justify-center">
+      <div className="text-black text-2xl mt-[240px] self-start max-md:mt-10 flex justify-center">
               Quality Forum
       </div>
     </div>
