@@ -1,151 +1,138 @@
-import React, { useState} from 'react';
-import food from "../assets/food.png";
-import sweep from "../assets/sweep.png";
-import washing from "../assets/washing.png";
-import internetsy from "../assets/wifi.png";
-import MessFeedback from './MessFeedback';
-import SweeperService from './SweeperService'; 
-import LaundryService from './LaundryService'; 
-import WifiService from './WifiService';
+import React from "react";
+import Button from "@mui/material/Button";
+import CssBaseline from "@mui/material/CssBaseline";
+import TextField from "@mui/material/TextField";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import { Typography } from "@mui/material";
 
 const AddStudent = (props) => {
-  const [isMessFeedbackVisible, setMessFeedbackVisible] = useState(false);
-  const [isSweeperServiceVisible, setSweeperServiceVisible] = useState(false);
-  const [isLaundryServiceVisible, setLaundryServiceVisible] = useState(false);
-  const [isWifiServiceVisible, setWifiServiceVisible] = useState(false);
-
-  const showMessFeedback = () => {
-    setMessFeedbackVisible(true);
-    setSweeperServiceVisible(false);
-    setLaundryServiceVisible(false);
-    setWifiServiceVisible(false);
-  };
-
-  const showSweeperService = () => {
-    setMessFeedbackVisible(false);
-    setSweeperServiceVisible(true);
-    setLaundryServiceVisible(false);
-    setWifiServiceVisible(false);
-  };
-
-  const showLaundryService = () => {
-    setMessFeedbackVisible(false);
-    setSweeperServiceVisible(false);
-    setLaundryServiceVisible(true);
-    setWifiServiceVisible(false);
-  };
-
-  const showWifiService = () => {
-    setMessFeedbackVisible(false);
-    setSweeperServiceVisible(false);
-    setLaundryServiceVisible(false);
-    setWifiServiceVisible(true);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log({
+      email: data.get("email"),
+      password: data.get("password"),
+    });
   };
 
   return (
     <main>
       <header className="bg-sky-100 bg-opacity-60 self-stretch flex flex-col mb-1 pb-24 px-5 max-md:max-w-full">
         <section className="self-center w-full mt-4 max-md:max-w-full max-md:mt-2">
-          <div className="gap-3 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
-          <div className="flex flex-col drop-shadow-xl items-stretch w-3/12 max-md:w-full max-md:ml-0">
-              <button
-                onClick={showMessFeedback}
-                className={`flex w-full grow flex-col flex-1 mx-auto px-3 py-6 rounded-xl max-md:mt-2 ${
-                  isMessFeedbackVisible
-                    ? 'shadow-lg bg-blue-500 text-white transform scale-105 transition-transform'
-                    : 'shadow-sm bg-white text-black transform scale-100 transition-transform'
-                }`}
-              >
-                <h2 className="text-black text-2xl self-center whitespace-nowrap">
-                  MESS FOOD
-                </h2>
-                <img
-                  loading="lazy"
-                  src={food}
-                  alt='food'
-                  className="aspect-[1.41] object-contain object-center w-[100px] stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
-                />
-              </button>
-
-            </div>
-            <div className="flex drop-shadow-xl flex-col items-stretch w-3/12 ml-2 max-md:w-full max-md:ml-0">
-              <button
-                onClick={showSweeperService}
-                className={`flex w-full grow flex-col flex-1 mx-auto px-3 py-6 rounded-xl max-md:mt-2 ${
-                  isSweeperServiceVisible
-                    ? 'shadow-lg bg-blue-500 text-white transform scale-105 transition-transform'
-                    : 'shadow-sm bg-white text-black transform scale-100 transition-transform'
-                }`}
-              >
-                <h2 className="text-black text-2xl self-center whitespace-nowrap">
-                  SWEEPER
-                </h2>
-                <img
-                  loading="lazy"
-                  src={sweep}
-                  alt='sweep'
-                  className="aspect-[1.41] object-contain object-center w-[100px] stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
-                />
-              </button>
-              
-            </div>
-            <div className="flex drop-shadow-xl flex-col items-stretch w-3/12 ml-2 max-md:w-full max-md:ml-0">
-              <button
-                onClick={showLaundryService}
-                className={`flex w-full grow flex-col flex-1 mx-auto px-3 py-6 rounded-xl max-md:mt-2 ${
-                  isLaundryServiceVisible
-                    ? 'shadow-lg bg-blue-500 text-white transform scale-105 transition-transform'
-                    : 'shadow-sm bg-white text-black transform scale-100 transition-transform'
-                }`}
-              >
-                <h2 className="text-black text-2xl self-center whitespace-nowrap">
-                  LAUNDRY
-                </h2>
-                <img
-                  loading="lazy"
-                  src={washing}
-                  alt='washing'
-                  className="aspect-[1.41] object-contain object-center w-[100px] stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
-                />
-              </button>
-             
-            </div>
-            <div className="flex flex-col drop-shadow-xl items-stretch w-3/12 ml-2 max-md:w-full max-md:ml-0">
-              <button
-                onClick={showWifiService}
-                className={`flex w-full grow flex-col flex-1 mx-auto px-3 py-6 rounded-xl max-md:mt-2 ${
-                  isWifiServiceVisible
-                    ? 'shadow-lg bg-blue-500 text-white transform scale-105 transition-transform'
-                    : 'shadow-sm bg-white text-black transform scale-100 transition-transform'
-                }`}
-              >
-                <h2 className="text-black text-2xl self-center whitespace-nowrap">
-                  INTERNET
-                </h2>
-                <img
-                  loading="lazy"
-                  src={internetsy}
-                  alt='wifi'
-                  className="aspect-[1.41] object-contain object-center w-[100px] stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
-                />
-              </button>
-             
-
-
-            </div>
+          <div className="flex w-full grow flex-col flex-1 mx-auto px-3 py-6 rounded-xl max-md:mt-2 bg-white text-black">
+            <h2 className="text-2xl font-bold text-center mb-4">
+              Add Students
+            </h2>
           </div>
         </section>
         <section>
           <div>
-          {isMessFeedbackVisible && <MessFeedback />}
-          {isSweeperServiceVisible && <SweeperService />}
-          {isLaundryServiceVisible && <LaundryService />}
-          {isWifiServiceVisible && <WifiService />}
+            <Container component="main">
+              <CssBaseline />
+              <Box className="mt-10 flex flex-col justify-center items-center">
+                <Box
+                  component="form"
+                  noValidate
+                  onSubmit={handleSubmit}
+                  sx={{ mt: 3 }}
+                >
+                  <Grid container spacing={2}>
+                    <Grid item xs={12} sm={6}>
+                      <Typography>Name</Typography>
+                      <TextField
+                        autoComplete="given-name"
+                        name="Name"
+                        required
+                        fullWidth
+                        id="Name"
+                        label="Name"
+                        autoFocus
+                      />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                      <Typography>Father Name</Typography>
+                      <TextField
+                        required
+                        fullWidth
+                        id="fathername"
+                        label="Father Name"
+                        name="fathername"
+                        autoComplete="family-name"
+                      />
+                    </Grid>
+                    <Grid item xs={12} sm={3}>
+                      <Typography>Hostel Name</Typography>
+                      <TextField
+                        required
+                        fullWidth
+                        id="hostelname"
+                        label="Hostel Name"
+                        name="hostelname"
+                        autoComplete="hostelname"
+                      />
+                    </Grid>
+                    <Grid item xs={12} sm={3}>
+                      <Typography>Room Number</Typography>
+                      <TextField
+                        required
+                        fullWidth
+                        name="roomnumber"
+                        label="Room Number"
+                        id="roomnumber"
+                        autoComplete="roomnumber"
+                      />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                      <Typography>College Id</Typography>
+                      <TextField
+                        required
+                        fullWidth
+                        name="CollegeId"
+                        label="College Id"
+                        id="CollegeId"
+                        autoComplete="CollegeId"
+                      />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                      <Typography>Phone Number</Typography>
+                      <TextField
+                        required
+                        fullWidth
+                        name="phonenumber"
+                        label="Phone Number"
+                        id="phonenumber"
+                        autoComplete="phonenumber"
+                      />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                      <Typography> Father Phone Number</Typography>
+                      <TextField
+                        required
+                        fullWidth
+                        name="phonenumber"
+                        label=" Father Phone Number"
+                        id="phonenumber"
+                        autoComplete="phonenumber"
+                      />
+                    </Grid>
+                  </Grid>
+                  <Button
+                    type="submit"
+                    fullWidth
+                    variant="contained"
+                    sx={{ mt: 3, mb: 2 }}
+                  >
+                    Register
+                  </Button>
+                </Box>
+              </Box>
+            </Container>
           </div>
         </section>
       </header>
     </main>
   );
 };
-
 export default AddStudent;
