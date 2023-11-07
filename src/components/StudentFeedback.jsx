@@ -47,7 +47,7 @@ const StudentFeedback = (props) => {
       <header className="bg-sky-100 bg-opacity-60 self-stretch flex flex-col mb-1 pb-24 px-5 max-md:max-w-full">
         <section className="self-center w-full mt-4 max-md:max-w-full max-md:mt-2">
           <div className="gap-3 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
-            <div className="flex flex-col drop-shadow-xl items-stretch w-3/12 max-md:w-full max-md:ml-0">
+          <div className="flex flex-col drop-shadow-xl items-stretch w-3/12 max-md:w-full max-md:ml-0">
               <button
                 onClick={showMessFeedback}
                 className={`flex w-full grow flex-col flex-1 mx-auto px-3 py-6 rounded-xl max-md:mt-2 ${

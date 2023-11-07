@@ -1,10 +1,11 @@
 import React from "react";
-import Parentsimg from "../assets/parents.png"
-import { TextField, Button, Link } from "@mui/material";
+import Studentimg from "../../assets/student.png"
+import { TextField, Button, } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function StudentLogin(props) {
   return (
-    <main className="bg-white flex flex-col pl-5 pr-1.5" id="parentslogin">
+    <main className="bg-white flex flex-col pl-5 pr-1.5" id="studentlogin">
       <section className="self-center flex w-full max-w-[1101px] flex-col mt-16 mb-2 max-md:max-w-full max-md:mt-10 justify-center items-center">
         <div className="flex max-w-full flex-col">
         <h1 className="text-black text-8xl max-w-[753px] max-md:max-w-full max-md:text-4xl mx-auto flex justify-center items-center">
@@ -16,12 +17,12 @@ function StudentLogin(props) {
             <div className="flex grow flex-col mt-0 max-md:mt-10">
               <img
                 loading="lazy"
-                src={Parentsimg}
+                src={Studentimg}
                 alt="Student"
                 className="pb-7 pt-10"
               />
             <h2 className="text-black text-3xl self-center ">
-                Parents Login
+                Student Login
             </h2>
             </div>
           </div>
@@ -32,38 +33,39 @@ function StudentLogin(props) {
                 <form>
                     <div className="flex flex-col">
                     <div className="flex flex-col max-md:mt-10 gap-6 justify-center items-center">
-                    <TextField
-                    className="rounded border self-stretch flex w-full flex-col pl-4 pr-5 py-4 pt-10 border-solid border-black"
-                    id="collegeId"
-                    label="College ID"
-                    variant="outlined"
-                    />
-                    <TextField
-                    className="rounded border self-stretch flex w-full flex-col mt-7 pl-4 pr-5 py-3 border-solid border-black"
-                    id="password"
-                    label="Password"
-                    type="password"
-                    variant="outlined"
-                    />
-                    <Button
-                    type="submit"
-                    variant="contained"
-                    className="rounded shadow-[0px_4px_4px_0px_rgba(0,0,0,0.30)] bg-sky-700 self-stretch flex w-full flex-col mt-9 px-5 py-6"
-                    >
-                    Login
-                    </Button>
+                      <TextField
+                        className="rounded border self-stretch flex w-full flex-col pl-4 pr-5 py-4 pt-10 border-solid border-black"
+                        id="collegeId"
+                        label="College ID"
+                        variant="outlined"
+                        />
+                      <TextField
+                        className="rounded border self-stretch flex w-full flex-col mt-7 pl-4 pr-5 py-3 border-solid border-black"
+                        id="password"
+                        label="Password"
+                        type="password"
+                        variant="outlined"
+                      />
+                      <Link to="/dashboard" className="text-white no-underline w-full">
+                        <Button
+                          type="submit"
+                          variant="contained"
+                          className="rounded shadow-[0px_4px_4px_0px_rgba(0,0,0,0.30)] bg-sky-700 flex w-full flex-col mt-9 px-14 py-6"
+                        >
+                        Login
+                        </Button>
+                      </Link>
                     </div>
                     <Link href="#" underline="always" className="text-black text-right text-base font-medium mt-10 max-md:mr-px">
-                    Forgot password?
+                      Forgot password?
                     </Link>
                     <Link
-                    href="#"
-                    underline="always"
-                    className="text-sky-700 text-left text-base font-bold underline max-md:ml-0"
+                      href="#"
+                      underline="always"
+                      className="text-sky-700 text-left text-base font-bold underline max-md:ml-0"
                     >
-                    Don't have an account? <span className="font-bold text-orange-500">Sign up</span>
+                      Don't have an account? <span className="font-bold text-orange-500">Sign up</span>
                     </Link>
-
                 </div>
                 </form>
             </div>

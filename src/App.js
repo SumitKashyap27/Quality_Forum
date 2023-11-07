@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./components/Login";
-import StudentLogin from "./components/StudentLogin";
-import ParentsLogin from "./components/ParentsLogin"
+import Login from "./components/logins/Login";
+import StudentLogin from "./components/logins/StudentLogin";
+import ParentsLogin from "./components/logins/ParentsLogin"
 //import WardenLogin from "./components/WardenLogin"
 import Dashboard from "./components/Dashboard";
-import AdministrationLogin from "./components/AdministrationLogin";
+import AdministrationLogin from "./components/logins/AdministrationLogin";
 //import AdministrationDashboard from "./components/AdministrationDashboard";
 import AdministrationDrawer from "./components/AdministrationDrawer";
 function App() {

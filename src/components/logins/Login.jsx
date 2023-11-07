@@ -1,7 +1,7 @@
 import React from "react";
-import studentimg from "../assets/student.png";
-import parentimg from "../assets/parents.png";
-import wardenimg from "../assets/warden.png"
+import studentimg from "../../assets/student.png";
+import parentimg from "../../assets/parents.png";
+import wardenimg from "../../assets/warden.png"
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 

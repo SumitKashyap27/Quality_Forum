@@ -1,5 +1,5 @@
 import React from "react";
-import Wardenimg from "../assets/warden.png"
+import Wardenimg from "../../assets/warden.png"
 import { TextField, Button, } from "@mui/material";
 import { Link } from "react-router-dom";
 
