@@ -1,21 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Rating from "@mui/material/Rating";
-import Button from "@mui/material/Button";
-//import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const LaundryService = () => {
-  const [anchorEl, setAnchorEl] = useState(null);
   const [behaviorRating, setBehaviorRating] = React.useState(1);
   const [regularityRating, setRegularityRating] = React.useState(1);
   const [cleanlinessRating, setCleanlinessRating] = React.useState(1);
 
-  const handleOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   return (
     <section className="self-center w-full mt-10 max-md:max-w-full max-md:mt-8">
@@ -26,14 +16,9 @@ const LaundryService = () => {
               <div className="self-stretch flex flex-col">
                 <h3 className="text-neutral-700 text-xl mb-4">GIVE RATING</h3>
                 <div className="relative inline-block text-left">
-                  <Button
-                    aria-controls="dropdown-menu"
-                    aria-haspopup="true"
-                    onClick={handleOpen}
+                  <div
                     variant="contained"
-                    color="primary"
-                    className="mt-11  mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
-                  >
+                    className="mr-3 mb-3 md:mb-0 focus:outline-none border solid focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
                     MACHINE CONDITION
                     <Rating
                       name="behavior-rating"
@@ -42,16 +27,12 @@ const LaundryService = () => {
                         setBehaviorRating(newValue);
                       }}
                     />
-                  </Button>
+                  </div>
                 </div>
                 <div className="relative inline-block text-left pt-2">
-                  <Button
-                    aria-controls="dropdown-menu"
-                    aria-haspopup="true"
-                    onClick={handleOpen}
+                  <div
                     variant="contained"
-                    color="primary"
-                    className="mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
+                    className="mr-3 mb-3 md:mb-0 focus:outline-none border solid focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
                   >
                     REGULARITY
                     <Rating
@@ -61,16 +42,12 @@ const LaundryService = () => {
                         setRegularityRating(newValue);
                       }}
                     />
-                  </Button>
+                  </div>
                 </div>
                 <div className="relative inline-block text-left pt-2">
-                  <Button
-                    aria-controls="dropdown-menu"
-                    aria-haspopup="true"
-                    onClick={handleOpen}
+                  <div
                     variant="contained"
-                    color="primary"
-                    className="mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark-bg-blue-600"
+                    className="mr-3 mb-3 md:mb-0 focus:outline-none border solid focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
                   >
                     CLEANLINESS
                     <Rating
@@ -80,7 +57,7 @@ const LaundryService = () => {
                         setCleanlinessRating(newValue);
                       }}
                     />
-                  </Button>
+                  </div>
                 </div>
               </div>
             </div>

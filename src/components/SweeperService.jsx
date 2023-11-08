@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Rating from "@mui/material/Rating";
 import Button from "@mui/material/Button";
-//import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const SweeperService = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -26,13 +25,12 @@ const SweeperService = () => {
               <div className="self-stretch flex flex-col">
                 <h3 className="text-neutral-700 text-xl mb-4">GIVE RATING</h3>
                 <div className="relative inline-block text-left">
-                  <Button
+                  <div
                     aria-controls="dropdown-menu"
                     aria-haspopup="true"
                     onClick={handleOpen}
                     variant="contained"
-                    color="primary"
-                    className="mt-11  mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
+                    className="mr-3 md:mb-0 border font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
                   >
                     BEHAVIOR
                     <Rating
@@ -42,16 +40,15 @@ const SweeperService = () => {
                         setBehaviorRating(newValue);
                       }}
                     />
-                  </Button>
+                  </div>
                 </div>
                 <div className="relative inline-block text-left pt-2">
-                  <Button
+                  <div
                     aria-controls="dropdown-menu"
                     aria-haspopup="true"
                     onClick={handleOpen}
                     variant="contained"
-                    color="primary"
-                    className="mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600"
+                    className="mr-3 md:mb-0 border font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
                   >
                     REGULARITY
                     <Rating
@@ -61,16 +58,16 @@ const SweeperService = () => {
                         setRegularityRating(newValue);
                       }}
                     />
-                  </Button>
+                  </div>
                 </div>
                 <div className="relative inline-block text-left pt-2">
-                  <Button
+                  <div
                     aria-controls="dropdown-menu"
                     aria-haspopup="true"
                     onClick={handleOpen}
                     variant="contained"
                     color="primary"
-                    className="mt-11 mr-3 mb-3 md:mb-0 text-white bg-blue-700 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark-bg-blue-600"
+                    className="mr-3 border md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center focus-visible:ring focus-visible:ring-purple-500/75"
                   >
                     CLEANLINESS
                     <Rating
@@ -80,7 +77,7 @@ const SweeperService = () => {
                         setCleanlinessRating(newValue);
                       }}
                     />
-                  </Button>
+                  </div>
                 </div>
               </div>
             </div>
