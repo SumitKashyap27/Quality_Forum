@@ -18,6 +18,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import StudentFeedback from './StudentFeedback';
 import Studentimg from '../assets/student.png'
+import RaiseAIssue from './RaiseAIssue';
 
 const drawerWidth = 240;
 function ResponsiveDrawer(props) {
@@ -44,7 +45,7 @@ function ResponsiveDrawer(props) {
 
     <Divider />
       <List>
-        {['Dashboard', 'Feedback'].map((text, index) => (
+        {['Dashboard', 'Feedback', "Raise a issue"].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton onClick={()=>setCurrentTab(text)}>
               <ListItemIcon>
@@ -128,7 +129,7 @@ function ResponsiveDrawer(props) {
         <Toolbar />
           {currentTab === "Dashboard" && <>Dashboard</>}
           {currentTab === "Feedback" && <StudentFeedback/>}
-          {/* {currentTab === "previous" && <>Previous</>} */}
+          {currentTab === "Raise a issue" && <RaiseAIssue/>} 
 
       </Box>
     </Box>

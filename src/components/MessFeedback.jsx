@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Rating from "@mui/material/Rating";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
