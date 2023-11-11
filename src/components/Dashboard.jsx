@@ -36,12 +36,12 @@ function ResponsiveDrawer(props) {
     <div>
       <Toolbar />
       <img
-        className='pt-0 mt-0 py-2 px-4'
+        className='block mx-auto my-auto  w-20 h-20'
         loading="lazy"
         src={Studentimg}
         alt="Student"
         />
-    <h3 className='pt-2 pb-3  text-center'>Name</h3>
+    <h3 className='pt-2 pb-3 text-center'>Name</h3>
 
     <Divider />
       <List>
@@ -58,7 +58,7 @@ function ResponsiveDrawer(props) {
       </List>
       <Divider />
       <Divider />
-      <div className="text-black text-2xl mt-[240px] self-start max-md:mt-10 flex justify-center">
+      <div className=" bg-primary text-black text-2xl mt-[295px] self-start max-md:mt-[295px] flex justify-center">
               Quality Forum
       </div>
     </div>
@@ -70,27 +70,29 @@ function ResponsiveDrawer(props) {
     <Box sx={{ display: 'flex' }} id="dashboard">
       <CssBaseline />
       <AppBar
-        position="fixed"
-        sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },
-        }}
-      >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            QUALITY FORUM
-          </Typography>
-        </Toolbar>
-      </AppBar>
+  position="fixed"
+  sx={{
+    width: { sm: `calc(100% - ${drawerWidth}px)` },
+    ml: { sm: `${drawerWidth}px` },
+    height: '56px', // Decrease the height by 2
+    backgroundColor: '#2196F3', // Change the background color to a shade of blue
+  }}
+>
+  <Toolbar>
+    <IconButton
+      color="inherit"
+      aria-label="open drawer"
+      edge="start"
+      onClick={handleDrawerToggle}
+      sx={{ mr: 2, display: { sm: 'none' } }}
+    >
+      <MenuIcon />
+    </IconButton>
+    <Typography variant="h7" noWrap sx={{ flexGrow: 1, color: '#fff' }}>
+      QUALITY FORUM
+    </Typography>
+  </Toolbar>
+</AppBar>
       <Box
         component="nav"
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}

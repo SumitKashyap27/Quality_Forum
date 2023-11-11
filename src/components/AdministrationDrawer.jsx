@@ -36,7 +36,7 @@ function AdministrationDrawer(props) {
     <div>
       <Toolbar />
       <img
-        className='pt-0 mt-0 py-2 px-4'
+        className=' block mx-auto my-auto  w-20 h-20'
         loading="lazy"
         src={Wardenimg}
         alt="Student"
@@ -58,9 +58,9 @@ function AdministrationDrawer(props) {
       </List>
       <Divider />
       <Divider />
-      <div className="text-black text-2xl mt-[245px]  self-start max-md:mt-10 flex justify-center">
-              Quality Forum
-      </div>
+      <div className=" text-black text-[18px] absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-4">
+      Quality Forum
+    </div>
     </div>
   );
   console.log(currentTab)
