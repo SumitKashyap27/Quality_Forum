@@ -1,94 +1,94 @@
-import React, { useState } from "react";
-import Checkbox from "@mui/material/Checkbox";
+import React,{useState} from "react"; 
 
-// Individual component for an issue item
-const IssueItem = ({ issue, selected, onClick }) => (
-  <div
-    className={`flex w-full justify-between rounded-lg border px-4 py-2 text-right text-sm font-medium focus:outline-none focus-visible:ring ${
-      selected ? "bg-red-500" : ""
-    }`}
-    onClick={onClick}
-  >
-    <div className={`text-sm font-medium ${selected ? "text-white" : ""}`}>
-      {issue}
-    </div>
-    <Checkbox
-      checked={selected}
-      onChange={() => {}}
-      sx={{ color: selected ? "#FFF" : "#1976D2" }}
-      className="ml-auto"
-    />
-  </div>
-);
 
-const RaiseAIssue = () => {
-  const [selectedIssues, setSelectedIssues] = useState([]);
+const plans = [
+  {
+    name: "Food",
+  },
+  {
+    name: "Medical",
+  },
+  {
+    name: "Drinking Water",
+  },
+  {
+    name: "Toilets",
+  },
+  {
+    name: "Gyms",
+  },
+  {
+    name: "Others",
+  },
+];
 
-  const handleIssueSelect = (issue) => {
-    const updatedSelectedIssues = selectedIssues.includes(issue)
-      ? selectedIssues.filter((selected) => selected !== issue)
-      : [...selectedIssues, issue];
+export default function Example() {
+  const [selectedPlans, setSelectedPlans] = useState([]);
+  const [feedback, setFeedback] = useState(null);
 
-    setSelectedIssues(updatedSelectedIssues);
+  const togglePlan = (plan) => {
+    if (selectedPlans.includes(plan)) {
+      setSelectedPlans(selectedPlans.filter((selected) => selected !== plan));
+    } else {
+      setSelectedPlans([...selectedPlans, plan]);
+    }
+  };
+  const handleFeedback = (value) => {
+    setFeedback(value);
   };
 
   return (
     <>
-      <div className="flex justify-center text-4xl lg:text-5xl xl:text-6xl pt-4">
-        Share your complaint
-      </div>
-
-      <div className="flex justify-center h-[420px] max-md:flex-col max-md:items-stretch max-md:gap-0">
-        <div className="flex flex-col items-stretch w-6/12 max-md:w-full max-md:ml-0">
-          <div className="flex w-[336px] max-w-full items-start gap-5 ml-4 self-start max-md:ml-2.5">
-            <div className="self-stretch flex flex-col">
-              <div className="mx-auto mt-2 w-full max-w-md rounded-2xl bg-white p-2">
-                {/* Use the IssueItem component for each issue */}
-                <IssueItem
-
-                  issue="Food"
-                  selected={selectedIssues.includes("Food")}
-                  onClick={() => handleIssueSelect("Food")}
-                  className={"mt-2"}
-                />
-                <IssueItem
-                  issue="Medical"
-                  selected={selectedIssues.includes("Medical")}
-                  onClick={() => handleIssueSelect("Medical")}
-                  className={"mt-2"}
-                />
-                <IssueItem
-                  issue="Drinking Water"
-                  selected={selectedIssues.includes("Drinking Water")}
-                  onClick={() => handleIssueSelect("Drinking Water")}
-                  className={"mt-2"}
-                />
-                <IssueItem
-                  issue="Ground"
-                  selected={selectedIssues.includes("Ground")}
-                  onClick={() => handleIssueSelect("Ground")}
-                  className={"mt-2"}
-                />
-                <IssueItem
-                  issue="Sports/GYM"
-                  selected={selectedIssues.includes("Sports/GYM")}
-                  onClick={() => handleIssueSelect("Sports/GYM")}
-                  className={"mt-2"}
-                />
-                <IssueItem
-                  issue="Other-Please Specify"
-                  selected={selectedIssues.includes("others")}
-                  onClick={() => handleIssueSelect("others")}
-                  className={"mt-2"}
-                  
-                />
+      <h2 className="flex justify-center items-center ">Share your Issues</h2>
+      <div className="grid justify-center items-center grid-cols-2 gap-4 px-4 py-16 mx-auto"  >
+        {plans.map((plan) => (
+          <React.Fragment key={plan.name}>
+            <div
+              className={`relative flex cursor-pointer rounded-lg px-5 py-4 shadow-md focus:outline-none ${
+                selectedPlans.includes(plan)
+                  ? "bg-red-900/75 text-white"
+                  : "bg-white"
+              }`}
+              onClick={() => togglePlan(plan)}
+            >
+              <div className="flex w-full items-center justify-between">
+                <div className="flex items-center">
+                  <div className="text-sm">
+                    <p
+                      className={`font-medium ${
+                        selectedPlans.includes(plan)
+                          ? "text-white"
+                          : "text-gray-900"
+                      }`}
+                    >
+                      {plan.name}
+                    </p>
+                    {/* Description can be added here */}
+                  </div>
+                </div>
+                {selectedPlans.includes(plan) && (
+                  <div className="shrink-0 text-white">
+                  </div>
+                )}
               </div>
             </div>
-          </div>
-        </div>
+            <div className="flex items-center">
+              <button
+                onClick={() => handleFeedback("Satisfied")}
+                className="inline-flex items-center px-4 py-2 font-semibold tracking-tighter transition duration-500 ease-in-out transform bg-green-500 border rounded-lg text-md hover:text-white hover:bg-green-600 focus:shadow-outline"
+              >
+                Satisfied
+              </button>
+              <button
+                onClick={() => handleFeedback("Unsatisfied")}
+                className="inline-flex items-center px-4 py-2 font-semibold tracking-tighter transition duration-500 ease-in-out transform bg-red-500 border rounded-lg text-md hover:text-white hover:bg-red-600 focus:shadow-outline"
+              >
+                Unsatisfied
+              </button>
+            </div>
+          </React.Fragment>
+        ))}
       </div>
     </>
   );
-};
-
-export default RaiseAIssue;
+}
