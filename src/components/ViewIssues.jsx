@@ -1,6 +1,5 @@
 import React,{useState} from "react"; 
 
-
 const plans = [
   {
     name: "Food",
@@ -40,7 +39,7 @@ export default function Example() {
   return (
     <>
       <h1 className="flex items-center text-4xl">
-        Share your Issues
+        View Issues of Students
       </h1>
       <div className="grid justify-center items-center grid-cols-2 gap-4 px-4 py-10 mx-auto"  >
         {plans.map((plan) => (
@@ -79,13 +78,13 @@ export default function Example() {
                 onClick={() => handleFeedback("Satisfied")}
                 className="inline-flex items-center px-4 py-2 font-semibold tracking-tighter transition duration-500 ease-in-out transform bg-green-500 border rounded-lg text-md hover:text-white hover:bg-green-600 focus:shadow-outline"
               >
-                Satisfied
+                Resolved
               </button>
               <button
                 onClick={() => handleFeedback("Unsatisfied")}
                 className="inline-flex items-center px-4 py-2 font-semibold tracking-tighter transition duration-500 ease-in-out transform bg-red-500 border rounded-lg text-md hover:text-white hover:bg-red-600 focus:shadow-outline"
               >
-                Unsatisfied
+                Unresolved
               </button>
             </div>
           </React.Fragment>

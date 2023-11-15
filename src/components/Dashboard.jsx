@@ -74,8 +74,8 @@ function ResponsiveDrawer(props) {
   sx={{
     width: { sm: `calc(100% - ${drawerWidth}px)` },
     ml: { sm: `${drawerWidth}px` },
-    height: '56px', // Decrease the height by 2
-    backgroundColor: '#2196F3', // Change the background color to a shade of blue
+    height: '56px', 
+    backgroundColor: '#2196F3', 
   }}
 >
   <Toolbar>

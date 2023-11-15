@@ -18,6 +18,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Wardenimg from '../assets/warden.png'
 import AddStudent from './AddStudent';
+import ViewIssues from "./ViewIssues"
 
 const drawerWidth = 240;
 
@@ -45,7 +46,7 @@ function AdministrationDrawer(props) {
 
     <Divider />
       <List>
-        {['Dashboard', 'AddStudents'].map((text, index) => (
+        {['Dashboard', 'AddStudents','View Issues'].map((text, index) => (
           <ListItem key={text} disablePadding>
           <ListItemButton onClick={()=>setCurrentTab(text)}>
             <ListItemIcon>
@@ -86,9 +87,9 @@ function AdministrationDrawer(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            QUALITY FORUM
-          </Typography>
+          <Typography variant="h7" noWrap sx={{ flexGrow: 1, color: '#fff' }}>
+      QUALITY FORUM
+    </Typography>
         </Toolbar>
       </AppBar>
       <Box
@@ -129,6 +130,7 @@ function AdministrationDrawer(props) {
         <Toolbar />
         {currentTab === "Dashboard" && <>Dashboard</>}
         {currentTab === "AddStudents" && <AddStudent/>}
+        {currentTab === "View Issues" && <ViewIssues/>}
       </Box>
     </Box>
   );

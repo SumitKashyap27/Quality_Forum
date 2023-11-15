@@ -22,7 +22,7 @@ const AddStudent = (props) => {
       <header className="bg-sky-100 bg-opacity-60 self-stretch flex flex-col mb-1 pb-24 px-5 max-md:max-w-full">
         <section className="self-center w-full mt-4 max-md:max-w-full max-md:mt-2">
           <div className="flex w-full grow flex-col flex-1 mx-auto px-3 py-6 rounded-xl max-md:mt-2 bg-white text-black">
-            <h2 className="text-2xl font-bold text-center mb-4">
+            <h2 className="text-4xl text-center mb-4">
               Add Students
             </h2>
           </div>
