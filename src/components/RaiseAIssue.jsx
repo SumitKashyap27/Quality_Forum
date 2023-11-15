@@ -24,7 +24,6 @@ const plans = [
 
 export default function Example() {
   const [selectedPlans, setSelectedPlans] = useState([]);
-  const [feedback, setFeedback] = useState(null);
 
   const togglePlan = (plan) => {
     if (selectedPlans.includes(plan)) {
@@ -32,9 +31,6 @@ export default function Example() {
     } else {
       setSelectedPlans([...selectedPlans, plan]);
     }
-  };
-  const handleFeedback = (value) => {
-    setFeedback(value);
   };
 
   return (
@@ -76,13 +72,13 @@ export default function Example() {
             </div>
             <div className="flex items-center">
               <button
-                onClick={() => handleFeedback("Satisfied")}
+                onClick={() =>("Satisfied")}
                 className="inline-flex items-center px-4 py-2 font-semibold tracking-tighter transition duration-500 ease-in-out transform bg-green-500 border rounded-lg text-md hover:text-white hover:bg-green-600 focus:shadow-outline"
               >
                 Satisfied
               </button>
               <button
-                onClick={() => handleFeedback("Unsatisfied")}
+                onClick={() => ("Unsatisfied")}
                 className="inline-flex items-center px-4 py-2 font-semibold tracking-tighter transition duration-500 ease-in-out transform bg-red-500 border rounded-lg text-md hover:text-white hover:bg-red-600 focus:shadow-outline"
               >
                 Unsatisfied

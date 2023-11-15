@@ -8,7 +8,7 @@ function AdministrationLogin(props) {
     <main className="bg-white flex flex-col pl-5 pr-1.5" id="administrationlogin">
       <section className="self-center flex w-full max-w-[1101px] flex-col mt-16 mb-2 max-md:max-w-full max-md:mt-10 justify-center items-center">
         <div className="flex max-w-full flex-col">
-        <h1 className="text-black text-8xl max-w-[753px] max-md:max-w-full max-md:text-4xl mx-auto flex justify-center items-center">
+        <h1 className="text-black text-6xl max-w-[753px] max-md:max-w-full max-md:text-4xl mx-auto flex justify-center items-center">
             Quality Forum
         </h1>
         </div>
@@ -19,7 +19,7 @@ function AdministrationLogin(props) {
                 loading="lazy"
                 src={Wardenimg}
                 alt="Student"
-                className="pb-7 pt-10"
+                className="pb-7 pt-10 block w-40 h-auto mx-auto" 
               />
             <h2 className="text-black text-3xl self-center ">
                 Administration Login

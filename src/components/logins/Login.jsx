@@ -22,7 +22,7 @@ function Login(props) {
                 loading="lazy"
                 src={studentimg}
                 alt="Student"
-                className="pb-7"
+                className="pb-7 "
               />
               <Link to="/studentlogin">
               <Button className="text-black text-6xl mt-8 max-md:text-2xl sm:text-center" variant="contained">
