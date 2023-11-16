@@ -8,7 +8,7 @@ import SweeperService from './SweeperService';
 import LaundryService from './LaundryService'; 
 import WifiService from './WifiService';
 
-const StudentFeedback = (props) => {
+const ViewDashboard = (props) => {
   const [isMessFeedbackVisible, setMessFeedbackVisible] = useState(false);
   const [isSweeperServiceVisible, setSweeperServiceVisible] = useState(false);
   const [isLaundryServiceVisible, setLaundryServiceVisible] = useState(false);
@@ -49,12 +49,6 @@ const StudentFeedback = (props) => {
           <div className="gap-3 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
           <div className="flex flex-col drop-shadow-xl items-stretch w-3/12 max-md:w-full max-md:ml-0">
               <button
-                onClick={showMessFeedback}
-                className={`flex w-full grow flex-col flex-1 mx-auto px-3 py-6 rounded-xl max-md:mt-2 ${
-                  isMessFeedbackVisible
-                    ? 'shadow-lg bg-blue-500 text-white transform scale-105 transition-transform'
-                    : 'shadow-sm bg-white text-black transform scale-100 transition-transform'
-                }`}
               >
                 <h2 className="text-black text-2xl self-center whitespace-nowrap">
                   MESS FOOD
@@ -70,12 +64,6 @@ const StudentFeedback = (props) => {
             </div>
             <div className="flex drop-shadow-xl flex-col items-stretch w-3/12 ml-2 max-md:w-full max-md:ml-0">
               <button
-                onClick={showSweeperService}
-                className={`flex w-full grow flex-col flex-1 mx-auto px-3 py-6 rounded-xl max-md:mt-2 ${
-                  isSweeperServiceVisible
-                    ? 'shadow-lg bg-blue-500 text-white transform scale-105 transition-transform'
-                    : 'shadow-sm bg-white text-black transform scale-100 transition-transform'
-                }`}
               >
                 <h2 className="text-black text-2xl self-center whitespace-nowrap">
                   SWEEPER
@@ -91,12 +79,6 @@ const StudentFeedback = (props) => {
             </div>
             <div className="flex drop-shadow-xl flex-col items-stretch w-3/12 ml-2 max-md:w-full max-md:ml-0">
               <button
-                onClick={showLaundryService}
-                className={`flex w-full grow flex-col flex-1 mx-auto px-3 py-6 rounded-xl max-md:mt-2 ${
-                  isLaundryServiceVisible
-                    ? 'shadow-lg bg-blue-500 text-white transform scale-105 transition-transform'
-                    : 'shadow-sm bg-white text-black transform scale-100 transition-transform'
-                }`}
               >
                 <h2 className="text-black text-2xl self-center whitespace-nowrap">
                   LAUNDRY
@@ -133,16 +115,23 @@ const StudentFeedback = (props) => {
           </div>
         </section>
         <section>
-          <div>
-          {isMessFeedbackVisible && <MessFeedback />}
-          {isSweeperServiceVisible && <SweeperService />}
-          {isLaundryServiceVisible && <LaundryService />}
-          {isWifiServiceVisible && <WifiService />}
-          </div>
         </section>
       </header>
     </main>
   );
 };
 
-export default StudentFeedback;
+export default ViewDashboard;
+
+        {/* issues yaha pr 
+        <div className="mt-14 max-md:max-w-full max-md:mt-10">
+          <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
+            <div className="flex flex-col items-stretch w-[78%] max-md:w-full max-md:ml-0">
+              <button className="shadow-sm bg-white flex w-[806px] shrink-0 h-[421px] flex-col mx-auto rounded-xl max-md:max-w-full max-md:mt-9" />
+            </div>
+            comments yaha pr
+            <div className="flex flex-col items-stretch w-[22%] ml-5 max-md:w-full max-md:ml-0">
+              <button className="shadow-sm bg-blue-900 flex w-[228px] shrink-0 h-[421px] flex-col mx-auto rounded-xl max-md:mt-9" />
+            </div>
+          </div>
+        </div> */}

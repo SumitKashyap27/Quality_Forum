@@ -19,6 +19,7 @@ import Typography from '@mui/material/Typography';
 import StudentFeedback from './StudentFeedback';
 import Studentimg from '../assets/student.png'
 import RaiseAIssue from './RaiseAIssue';
+import ViewDashboard from './ViewDashboard';
 
 const drawerWidth = 240;
 function ResponsiveDrawer(props) {
@@ -129,7 +130,7 @@ function ResponsiveDrawer(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
-          {currentTab === "Dashboard" && <>Dashboard</>}
+          {currentTab === "Dashboard" && <ViewDashboard/>}
           {currentTab === "Feedback" && <StudentFeedback/>}
           {currentTab === "Raise a issue" && <RaiseAIssue/>} 
 
