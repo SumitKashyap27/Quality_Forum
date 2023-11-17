@@ -4,7 +4,38 @@ import sweep from "../assets/sweep.png";
 import washing from "../assets/washing.png";
 import internetsy from "../assets/wifi.png";
 
+const plans = [
+  {
+    name: "Food",
+  },
+  {
+    name: "Medical",
+  },
+  {
+    name: "Drinking Water",
+  },
+  {
+    name: "Toilets",
+  },
+  {
+    name: "Gyms",
+  },
+  {
+    name: "Others",
+  },
+];
+
 const ViewDashboard = (props) => {
+  const [selectedPlans, setSelectedPlans] = useState([]);
+
+  const togglePlan = (plan) => {
+    if (selectedPlans.includes(plan)) {
+      setSelectedPlans(selectedPlans.filter((selected) => selected !== plan));
+    } else {
+      setSelectedPlans([...selectedPlans, plan]);
+    }
+  };
+
   return (
     <main>
       <header className=" bg-opacity-60 self-stretch flex flex-col mb-1 pb-24 px-5 max-md:max-w-full">
@@ -23,7 +54,7 @@ const ViewDashboard = (props) => {
                   loading="lazy"
                   src={food}
                   alt="food"
-                  className="aspect-[1.41] object-contain object-center w-[100px] stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
+                  className="aspect-[1.41] object-contain object-center stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
                 />
               </button>
             </div>
@@ -40,7 +71,7 @@ const ViewDashboard = (props) => {
                   loading="lazy"
                   src={sweep}
                   alt="sweep"
-                  className="aspect-[1.41] object-contain object-center w-[100px] stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
+                  className="aspect-[1.41] object-contain object-center stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
                 />
               </button>
             </div>
@@ -57,7 +88,7 @@ const ViewDashboard = (props) => {
                   loading="lazy"
                   src={washing}
                   alt="washing"
-                  className="aspect-[1.41] object-contain object-center w-[100px] stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
+                  className="aspect-[1.41] object-contain object-center stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
                 />
               </button>
             </div>
@@ -74,21 +105,58 @@ const ViewDashboard = (props) => {
                   loading="lazy"
                   src={internetsy}
                   alt="wifi"
-                  className="aspect-[1.41] object-contain object-center w-[100px] stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
+                  className="aspect-[1.41] object-contain object-center stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
                 />
               </button>
             </div>
           </div>
         </section>
         <section>
-          <div className=" grid grid-cols-3 gap-4 drop-shadow-xl mt-14 max-md:max-w-full max-md:mt-10">
-            <div className="grid col-span-2 items-stretch  max-md:w-full max-md:ml-0">
-              <button className="shadow-sm bg-white flex w-full shrink-0 h-[421px] flex-col mx-auto rounded-xl max-md:max-w-full max-md:mt-9" />
+          <>
+            <div className=" grid grid-cols-3 gap-4 drop-shadow-xl mt-14 max-md:max-w-full max-md:mt-10">
+              <div className="grid col-span-2 items-stretch  max-md:w-full max-md:ml-0">
+                <div className="shadow-sm bg-white flex w-full shrink-0 h-auto flex-col mx-auto rounded-xl max-md:max-w-full max-md:mt-9">
+                  <div className=" grid w-full items-start gap-4 px-4 py-10 mx-auto">
+                    {plans.map((plan) => (
+                      <React.Fragment key={plan.name}>
+                        <div
+                          className={`relative flex cursor-pointer rounded-lg px-5 py-4 shadow-md focus:outline-none ${
+                            selectedPlans.includes(plan)
+                              ? "bg-red-900/75 text-white"
+                              : "bg-white"
+                          }`}
+                          onClick={() => togglePlan(plan)}
+                        >
+                          <div className="flex w-full items-center justify-between">
+                            <div className="flex items-center">
+                              <div className="text-sm">
+                                <p
+                                  className={`font-medium ${
+                                    selectedPlans.includes(plan)
+                                      ? "text-white"
+                                      : "text-gray-900"
+                                  }`}
+                                >
+                                  {plan.name}
+                                </p>
+                                {/* Description can be added here */}
+                              </div>
+                            </div>
+                            {selectedPlans.includes(plan) && (
+                              <div className="shrink-0 text-white"></div>
+                            )}
+                          </div>
+                        </div>
+                      </React.Fragment>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="grid items-stretch col-span-1 ml-5 max-md:w-full max-md:ml-0">
+                <div className="shadow-sm bg-white flex w-full shrink-0 h-auto flex-col mx-auto rounded-xl max-md:mt-9"></div>
+              </div>
             </div>
-            <div className="grid items-stretch col-span-1 ml-5 max-md:w-full max-md:ml-0">
-              <button className="shadow-sm bg-white flex w-full shrink-0 h-[421px] flex-col mx-auto rounded-xl max-md:mt-9" />
-            </div>
-          </div>
+          </>
         </section>
       </header>
     </main>
