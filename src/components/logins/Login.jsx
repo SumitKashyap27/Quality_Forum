@@ -10,7 +10,7 @@ function Login(props) {
     <>
     <main className="bg-gradient-to-b from-cyan-500 to-white h-full w-full flex flex-col justify-center items-center pr-1.5">
       <header className="self-center flex w-full max-w-[1132px] flex-col mt-28 mb-2 max-md:max-w-full max-md:mt-10">
-      <h1 className="text-black text-8xl max-w-[753px] max-md:max-w-full max-md:text-6xl mx-auto flex justify-center items-center">
+      <h1 className="text-black text-6xl max-w-[753px] max-md:max-w-full max-md:text-6xl mx-auto flex justify-center items-center">
         Quality Forum
       </h1>
       </header>
@@ -22,7 +22,7 @@ function Login(props) {
                 loading="lazy"
                 src={studentimg}
                 alt="Student"
-                className="pb-7 "
+                className="pb-10 block w-40 h-auto mx-auto "
               />
               <Link to="/studentlogin">
               <Button className="text-black text-6xl mt-8 max-md:text-2xl sm:text-center" variant="contained">
@@ -37,7 +37,7 @@ function Login(props) {
                 loading="lazy"
                 src={parentimg}
                 alt="Parents"
-                className="pb-7"
+                className="pb-10 block w-40 h-auto mx-auto"
 
               />
               <Link to="/parentslogin">
@@ -53,7 +53,7 @@ function Login(props) {
                 loading="lazy"
                 src={wardenimg}
                 alt="Warden"
-                className="pb-7"
+                className="pb-10 block w-40 h-auto mx-auto"
               />
               <Link to="/administrationlogin">
                 <Button className="text-black text-6xl mt-8 max-md:text-2xl sm:text-center" variant="contained">
@@ -64,7 +64,7 @@ function Login(props) {
           </div>
         </div>
       </section>
-      <div className="mt-auto p-4 text-center pt-10">
+      <div className="mt-auto p-4 text-center pt-24">
         <p className="text-gray-500">
         All rights reserved &copy; Quality Forum
         </p>

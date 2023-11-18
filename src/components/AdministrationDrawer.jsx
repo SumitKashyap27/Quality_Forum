@@ -6,19 +6,21 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Wardenimg from '../assets/warden.png'
 import AddStudent from './AddStudent';
 import ViewIssues from "./ViewIssues"
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import AddBoxIcon from '@mui/icons-material/AddBox';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import ViewDashboard from './ViewDashboard';
 
 const drawerWidth = 240;
 
@@ -50,7 +52,7 @@ function AdministrationDrawer(props) {
           <ListItem key={text} disablePadding>
           <ListItemButton onClick={()=>setCurrentTab(text)}>
             <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+            {index % 3 === 0 ? <DashboardIcon /> : index % 3 === 1 ? <AddBoxIcon /> : <RemoveRedEyeIcon />}
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItemButton>
@@ -128,7 +130,7 @@ function AdministrationDrawer(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
-        {currentTab === "Dashboard" && <>Dashboard</>}
+        {currentTab === "Dashboard" && <ViewDashboard/>}
         {currentTab === "AddStudents" && <AddStudent/>}
         {currentTab === "View Issues" && <ViewIssues/>}
       </Box>

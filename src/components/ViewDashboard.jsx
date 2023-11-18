@@ -1,8 +1,4 @@
 import React, { useState } from "react";
-import food from "../assets/food.png";
-import sweep from "../assets/sweep.png";
-import washing from "../assets/washing.png";
-import internetsy from "../assets/wifi.png";
 
 const plans = [
   {
@@ -50,12 +46,11 @@ const ViewDashboard = (props) => {
                 <h2 className="text-black text-2xl self-center whitespace-nowrap">
                   MESS FOOD
                 </h2>
-                <img
-                  loading="lazy"
-                  src={food}
-                  alt="food"
+                <div
                   className="aspect-[1.41] object-contain object-center stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
-                />
+                >
+                  graph of mess food
+                </div>
               </button>
             </div>
             <div className="flex drop-shadow-xl flex-col items-stretch w-3/12 ml-2 max-md:w-full max-md:ml-0">
@@ -67,12 +62,11 @@ const ViewDashboard = (props) => {
                 <h2 className="text-black text-2xl self-center whitespace-nowrap">
                   SWEEPER
                 </h2>
-                <img
-                  loading="lazy"
-                  src={sweep}
-                  alt="sweep"
+                <div
                   className="aspect-[1.41] object-contain object-center stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
-                />
+                >
+                  graph of SweeperService
+                </div>
               </button>
             </div>
             <div className="flex drop-shadow-xl flex-col items-stretch w-3/12 ml-2 max-md:w-full max-md:ml-0">
@@ -84,12 +78,10 @@ const ViewDashboard = (props) => {
                 <h2 className="text-black text-2xl self-center whitespace-nowrap">
                   LAUNDRY
                 </h2>
-                <img
-                  loading="lazy"
-                  src={washing}
-                  alt="washing"
-                  className="aspect-[1.41] object-contain object-center stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
-                />
+                <div className="aspect-[1.41] object-contain object-center stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
+                >
+                  graph of LaundryService
+                </div>
               </button>
             </div>
             <div className="flex flex-col drop-shadow-xl items-stretch w-3/12 ml-2 max-md:w-full max-md:ml-0">
@@ -101,12 +93,10 @@ const ViewDashboard = (props) => {
                 <h2 className="text-black text-2xl self-center whitespace-nowrap">
                   INTERNET
                 </h2>
-                <img
-                  loading="lazy"
-                  src={internetsy}
-                  alt="wifi"
-                  className="aspect-[1.41] object-contain object-center stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
-                />
+                <div className="aspect-[1.41] object-contain object-center stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
+                >
+                  here the graph of internet will come
+                </div>
               </button>
             </div>
           </div>

@@ -22,7 +22,7 @@ const plans = [
   },
 ];
 
-export default function Example() {
+export default function RaiseAIssue() {
   const [selectedPlans, setSelectedPlans] = useState([]);
 
   const togglePlan = (plan) => {
