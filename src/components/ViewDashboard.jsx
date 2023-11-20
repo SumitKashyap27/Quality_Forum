@@ -46,9 +46,7 @@ const ViewDashboard = (props) => {
                 <h2 className="text-black text-2xl self-center whitespace-nowrap">
                   MESS FOOD
                 </h2>
-                <div
-                  className="aspect-[1.41] object-contain object-center stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
-                >
+                <div className="aspect-[1.41] object-contain object-center stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4">
                   graph of mess food
                 </div>
               </button>
@@ -62,9 +60,7 @@ const ViewDashboard = (props) => {
                 <h2 className="text-black text-2xl self-center whitespace-nowrap">
                   SWEEPER
                 </h2>
-                <div
-                  className="aspect-[1.41] object-contain object-center stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
-                >
+                <div className="aspect-[1.41] object-contain object-center stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4">
                   graph of SweeperService
                 </div>
               </button>
@@ -78,8 +74,7 @@ const ViewDashboard = (props) => {
                 <h2 className="text-black text-2xl self-center whitespace-nowrap">
                   LAUNDRY
                 </h2>
-                <div className="aspect-[1.41] object-contain object-center stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
-                >
+                <div className="aspect-[1.41] object-contain object-center stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4">
                   graph of LaundryService
                 </div>
               </button>
@@ -93,8 +88,7 @@ const ViewDashboard = (props) => {
                 <h2 className="text-black text-2xl self-center whitespace-nowrap">
                   INTERNET
                 </h2>
-                <div className="aspect-[1.41] object-contain object-center stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4"
-                >
+                <div className="aspect-[1.41] object-contain object-center stroke-[1px] stroke-black overflow-hidden self-center max-w-full mt-4">
                   here the graph of internet will come
                 </div>
               </button>
@@ -103,17 +97,18 @@ const ViewDashboard = (props) => {
         </section>
         <section>
           <>
-            <div className=" grid grid-cols-3 gap-4 drop-shadow-xl mt-14 max-md:max-w-full max-md:mt-10">
-              <div className="grid col-span-2 items-stretch  max-md:w-full max-md:ml-0">
+            <div className="grid grid-cols-2 md:grid-cols-2 gap-4 drop-shadow-xl mt-14 max-md:max-w-full max-md:mt-10">
+              <div className="grid  items-stretch max-md:w-full max-md:ml-0">
                 <div className="shadow-sm bg-white flex w-full shrink-0 h-auto flex-col mx-auto rounded-xl max-md:max-w-full max-md:mt-9">
-                  <div className=" grid w-full items-start gap-4 px-4 py-10 mx-auto">
+                  <div className="grid col-span-2  md:col-span-2 w-full items-start gap-4 px-4 py-10 mx-auto">
+                    <h1 className="flex items-center text-2xl">View Issues</h1>
                     {plans.map((plan) => (
                       <React.Fragment key={plan.name}>
                         <div
                           className={`relative flex cursor-pointer rounded-lg px-5 py-4 shadow-md focus:outline-none ${
                             selectedPlans.includes(plan)
                               ? "bg-red-900/75 text-white"
-                              : "bg-white"
+                              : "bg-green-500"
                           }`}
                           onClick={() => togglePlan(plan)}
                         >
@@ -142,8 +137,8 @@ const ViewDashboard = (props) => {
                   </div>
                 </div>
               </div>
-              <div className="grid items-stretch col-span-1 ml-5 max-md:w-full max-md:ml-0">
-                <div className="shadow-sm bg-white flex w-full shrink-0 h-auto flex-col mx-auto rounded-xl max-md:mt-9"></div>
+              <div className="grid col-span-1 md:col-span-1 flex-grow items-stretch ml-0 md:ml-5 max-md:w-full max-md:ml-0 bg-white shadow-sm rounded-xl pt-10 pl-5">
+                Comments
               </div>
             </div>
           </>
