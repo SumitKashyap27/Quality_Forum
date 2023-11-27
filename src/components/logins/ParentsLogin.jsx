@@ -1,6 +1,7 @@
 import React from "react";
 import Parentsimg from "../../assets/parents.png"
-import { TextField, Button, Link } from "@mui/material";
+import { TextField, Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function StudentLogin(props) {
   return (
@@ -45,13 +46,15 @@ function StudentLogin(props) {
                     type="password"
                     variant="outlined"
                     />
-                    <Button
-                    type="submit"
-                    variant="contained"
-                    className="rounded shadow-[0px_4px_4px_0px_rgba(0,0,0,0.30)] bg-sky-700 self-stretch flex w-full flex-col mt-9 px-5 py-6"
-                    >
-                    Login
-                    </Button>
+                      <Link to="/dashboard" className="text-white no-underline w-full">
+                        <Button
+                          type="submit"
+                          variant="contained"
+                          className="rounded shadow-[0px_4px_4px_0px_rgba(0,0,0,0.30)] bg-sky-700 flex w-full flex-col mt-9 px-14 py-6"
+                        >
+                        Login
+                        </Button>
+                      </Link>
                     </div>
                     <Link href="#" underline="always" className="text-black text-right text-base font-medium mt-10 max-md:mr-px">
                     Forgot password?

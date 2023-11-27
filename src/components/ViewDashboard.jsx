@@ -97,7 +97,7 @@ const ViewDashboard = (props) => {
         </section>
         <section>
           <>
-            <div className="grid grid-cols-2 md:grid-cols-2 gap-4 drop-shadow-xl mt-14 max-md:max-w-full max-md:mt-10">
+            <div className="grid grid-cols-3 md:grid-cols-2 gap-4 drop-shadow-xl mt-14 max-md:max-w-full max-md:mt-10">
               <div className="grid  items-stretch max-md:w-full max-md:ml-0">
                 <div className="shadow-sm bg-white flex w-full shrink-0 h-auto flex-col mx-auto rounded-xl max-md:max-w-full max-md:mt-9">
                   <div className="grid col-span-2  md:col-span-2 w-full items-start gap-4 px-4 py-10 mx-auto">
