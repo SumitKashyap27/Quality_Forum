@@ -1,13 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Rating from "@mui/material/Rating";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
 
 const MessFeedback = () => {
-  const [breakfastRating, setBreakfastRating] = React.useState(1);
-  const [lunchRating, setLunchRating] = React.useState(1);
-  const [snacksRating, setSnacksRating] = React.useState(1);
-  const [dinnerRating, setDinnerRating] = React.useState(1);
+  const daysOfWeek = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+
+  const [ratings, setRatings] = useState(
+    daysOfWeek.reduce((acc, day) => {
+      acc[day] = {
+        breakfast: 0,
+        lunch: 0,
+        snacks: 0,
+        dinner: 0,
+      };
+      return acc;
+    }, {})
+  );
+
+  // Function to log the ratings for each meal category
+  const logRatings = (day) => {
+    console.log(`${day} Ratings:`, ratings[day]);
+  };
+
+  useEffect(() => {
+    daysOfWeek.forEach((day) => logRatings(day));
+  }, [ratings]);
 
   return (
     <section className="self-center w-full mt-10 max-md:max-w-full max-md:mt-8">
@@ -18,460 +44,50 @@ const MessFeedback = () => {
               <div className="self-stretch flex flex-col">
                 <h3 className="text-neutral-700 text-xl mb-4">GIVE RATING</h3>
                 <div className="relative inline-block text-left">
-                  <div className="mx-auto w-full max-w-md rounded-2xl bg-white p-2">
-                    <Disclosure>
-                      {({ open }) => (
-                        <>
-                          <Disclosure.Button className="flex w-full justify-between rounded-lg border  px-4 py-2 text-left text-sm font-medium hover:bg-purple-200 focus:outline-none focus-visible:ring">
-                            <span>Monday</span>
-                            <ChevronUpIcon
-                              className={`${
-                                open ? "rotate-180 transform" : ""
-                              } h-5 w-5`}
-                            />
-                          </Disclosure.Button>
-                          <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                            <div className="relative inline-block text-left">
-                              <div className="pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Breakfast
-                                <Rating
-                                  name="breakfast-rating"
-                                  value={breakfastRating}
-                                  onChange={(event, newValue) => {
-                                    setBreakfastRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                            <div className="relative inline-block text-left pt-2">
-                              <div className=" pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Lunch
-                                <Rating
-                                  name="lunch-rating"
-                                  value={lunchRating}
-                                  onChange={(event, newValue) => {
-                                    setLunchRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                            <div className="relative inline-block text-left pt-2">
-                              <div className="pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Snacks
-                                <Rating
-                                  name="snacks-rating"
-                                  value={snacksRating}
-                                  onChange={(event, newValue) => {
-                                    setSnacksRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                            <div className="relative inline-block text-left pt-2">
-                              <div className="pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Dinner
-                                <Rating
-                                  name="dinner-rating"
-                                  value={dinnerRating}
-                                  onChange={(event, newValue) => {
-                                    setDinnerRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                          </Disclosure.Panel>
-                        </>
-                      )}
-                    </Disclosure>
-                    <Disclosure>
-                      {({ open }) => (
-                        <>
-                          <Disclosure.Button className=" mt-2 flex w-full justify-between rounded-lg border px-4 py-2 text-left text-sm font-medium  hover:bg-purple-200 focus:outline-none focus-visible:ring">
-
-                            <span>Tuesday</span>
-                            <ChevronUpIcon
-                              className={`${
-                                open ? "rotate-180 transform" : ""
-                              } h-5 w-5`}
-                            />
-                          </Disclosure.Button>
-                          <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                            <div className="relative inline-block text-left">
-                              <div className="pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Breakfast
-                                <Rating
-                                  name="breakfast-rating"
-                                  value={breakfastRating}
-                                  onChange={(event, newValue) => {
-                                    setBreakfastRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                            <div className="relative inline-block text-left pt-2">
-                              <div className=" pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Lunch
-                                <Rating
-                                  name="lunch-rating"
-                                  value={lunchRating}
-                                  onChange={(event, newValue) => {
-                                    setLunchRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                            <div className="relative inline-block text-left pt-2">
-                              <div className="pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Snacks
-                                <Rating
-                                  name="snacks-rating"
-                                  value={snacksRating}
-                                  onChange={(event, newValue) => {
-                                    setSnacksRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                            <div className="relative inline-block text-left pt-2">
-                              <div className="pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Dinner
-                                <Rating
-                                  name="dinner-rating"
-                                  value={dinnerRating}
-                                  onChange={(event, newValue) => {
-                                    setDinnerRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                          </Disclosure.Panel>
-                        </>
-                      )}
-                    </Disclosure>
-                    <Disclosure>
-                      {({ open }) => (
-                        <>
-                          <Disclosure.Button className="mt-2 flex w-full justify-between rounded-lg border px-4 py-2 text-left text-sm font-medium hover:bg-purple-200 focus:outline-none focus-visible:ring">
-
-                            <span>Wednesday</span>
-                            <ChevronUpIcon
-                              className={`${
-                                open ? "rotate-180 transform" : ""
-                              } h-5 w-5`}
-                            />
-                          </Disclosure.Button>
-                          <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                            <div className="relative inline-block text-left">
-                              <div className="pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Breakfast
-                                <Rating
-                                  name="breakfast-rating"
-                                  value={breakfastRating}
-                                  onChange={(event, newValue) => {
-                                    setBreakfastRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                            <div className="relative inline-block text-left pt-2">
-                              <div className=" pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Lunch
-                                <Rating
-                                  name="lunch-rating"
-                                  value={lunchRating}
-                                  onChange={(event, newValue) => {
-                                    setLunchRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                            <div className="relative inline-block text-left pt-2">
-                              <div className="pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Snacks
-                                <Rating
-                                  name="snacks-rating"
-                                  value={snacksRating}
-                                  onChange={(event, newValue) => {
-                                    setSnacksRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                            <div className="relative inline-block text-left pt-2">
-                              <div className="pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Dinner
-                                <Rating
-                                  name="dinner-rating"
-                                  value={dinnerRating}
-                                  onChange={(event, newValue) => {
-                                    setDinnerRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                          </Disclosure.Panel>
-                        </>
-                      )}
-                    </Disclosure>
-                    <Disclosure>
-                      {({ open }) => (
-                        <>
-                          <Disclosure.Button className="mt-2 flex w-full justify-between rounded-lg border px-4 py-2 text-left text-sm font-medium hover:bg-purple-200 focus:outline-none focus-visible:ring ">
-
-                            <span>Thursday</span>
-                            <ChevronUpIcon
-                              className={`${
-                                open ? "rotate-180 transform" : ""
-                              } h-5 w-5`}
-                            />
-                          </Disclosure.Button>
-                          <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                            <div className="relative inline-block text-left">
-                              <div className="pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Breakfast
-                                <Rating
-                                  name="breakfast-rating"
-                                  value={breakfastRating}
-                                  onChange={(event, newValue) => {
-                                    setBreakfastRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                            <div className="relative inline-block text-left pt-2">
-                              <div className=" pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Lunch
-                                <Rating
-                                  name="lunch-rating"
-                                  value={lunchRating}
-                                  onChange={(event, newValue) => {
-                                    setLunchRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                            <div className="relative inline-block text-left pt-2">
-                              <div className="pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Snacks
-                                <Rating
-                                  name="snacks-rating"
-                                  value={snacksRating}
-                                  onChange={(event, newValue) => {
-                                    setSnacksRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                            <div className="relative inline-block text-left pt-2">
-                              <div className="pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Dinner
-                                <Rating
-                                  name="dinner-rating"
-                                  value={dinnerRating}
-                                  onChange={(event, newValue) => {
-                                    setDinnerRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                          </Disclosure.Panel>
-                        </>
-                      )}
-                    </Disclosure>
-                    <Disclosure>
-                      {({ open }) => (
-                        <>
-                          <Disclosure.Button className=" mt-2 flex w-full justify-between rounded-lg border  px-4 py-2 text-left text-sm font-medium hover:bg-purple-200 focus:outline-none focus-visible:ring">
-
-                            <span>Friday</span>
-                            <ChevronUpIcon
-                              className={`${
-                                open ? "rotate-180 transform" : ""
-                              } h-5 w-5`}
-                            />
-                          </Disclosure.Button>
-                          <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                            <div className="relative inline-block text-left">
-                              <div className="pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Breakfast
-                                <Rating
-                                  name="breakfast-rating"
-                                  value={breakfastRating}
-                                  onChange={(event, newValue) => {
-                                    setBreakfastRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                            <div className="relative inline-block text-left pt-2">
-                              <div className=" pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Lunch
-                                <Rating
-                                  name="lunch-rating"
-                                  value={lunchRating}
-                                  onChange={(event, newValue) => {
-                                    setLunchRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                            <div className="relative inline-block text-left pt-2">
-                              <div className="pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Snacks
-                                <Rating
-                                  name="snacks-rating"
-                                  value={snacksRating}
-                                  onChange={(event, newValue) => {
-                                    setSnacksRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                            <div className="relative inline-block text-left pt-2">
-                              <div className="pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Dinner
-                                <Rating
-                                  name="dinner-rating"
-                                  value={dinnerRating}
-                                  onChange={(event, newValue) => {
-                                    setDinnerRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                          </Disclosure.Panel>
-                        </>
-                      )}
-                    </Disclosure>
-                    <Disclosure>
-                      {({ open }) => (
-                        <>
-                          <Disclosure.Button className="mt-2 flex w-full justify-between rounded-lg border  px-4 py-2 text-left text-sm font-medium hover:bg-purple-200 focus:outline-none focus-visible:ring">
-
-                            <span>Saturday</span>
-                            <ChevronUpIcon
-                              className={`${
-                                open ? "rotate-180 transform" : ""
-                              } h-5 w-5`}
-                            />
-                          </Disclosure.Button>
-                          <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                            <div className="relative inline-block text-left">
-                              <div className="pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Breakfast
-                                <Rating
-                                  name="breakfast-rating"
-                                  value={breakfastRating}
-                                  onChange={(event, newValue) => {
-                                    setBreakfastRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                            <div className="relative inline-block text-left pt-2">
-                              <div className=" pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Lunch
-                                <Rating
-                                  name="lunch-rating"
-                                  value={lunchRating}
-                                  onChange={(event, newValue) => {
-                                    setLunchRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                            <div className="relative inline-block text-left pt-2">
-                              <div className="pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Snacks
-                                <Rating
-                                  name="snacks-rating"
-                                  value={snacksRating}
-                                  onChange={(event, newValue) => {
-                                    setSnacksRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                            <div className="relative inline-block text-left pt-2">
-                              <div className="pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Dinner
-                                <Rating
-                                  name="dinner-rating"
-                                  value={dinnerRating}
-                                  onChange={(event, newValue) => {
-                                    setDinnerRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                          </Disclosure.Panel>
-                        </>
-                      )}
-                    </Disclosure>
-                    <Disclosure>
-                      {({ open }) => (
-                        <>
-                          <Disclosure.Button className=" mt-2 flex w-full justify-between rounded-lg border  px-4 py-2 text-left text-sm font-medium hover:bg-purple-200 focus:outline-none focus-visible:ring">
-                            <span>Sunday</span>
-                            <ChevronUpIcon
-                              className={`${
-                                open ? "rotate-180 transform" : ""
-                              } h-5 w-5`}
-                            />
-                          </Disclosure.Button>
-                          <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                            <div className="relative inline-block text-left">
-                              <div className="pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Breakfast
-                                <Rating
-                                  name="breakfast-rating"
-                                  value={breakfastRating}
-                                  onChange={(event, newValue) => {
-                                    setBreakfastRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                            <div className="relative inline-block text-left pt-2">
-                              <div className=" pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Lunch
-                                <Rating
-                                  name="lunch-rating"
-                                  value={lunchRating}
-                                  onChange={(event, newValue) => {
-                                    setLunchRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                            <div className="relative inline-block text-left pt-2">
-                              <div className="pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Snacks
-                                <Rating
-                                  name="snacks-rating"
-                                  value={snacksRating}
-                                  onChange={(event, newValue) => {
-                                    setSnacksRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                            <div className="relative inline-block text-left pt-2">
-                              <div className="pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Dinner
-                                <Rating
-                                  name="dinner-rating"
-                                  value={dinnerRating}
-                                  onChange={(event, newValue) => {
-                                    setDinnerRating(newValue);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                          </Disclosure.Panel>
-                        </>
-                      )}
-                    </Disclosure>
+                  <div className="mx-auto w-full max-w-md rounded-2xl bg-white p-2 my-auto">
+                    {daysOfWeek.map((day) => (
+                      <Disclosure key={day}>
+                        {({ open }) => (
+                          <>
+                            <Disclosure.Button className="flex w-full justify-between rounded-lg border  px-4 py-2 my-2 text-left text-sm font-medium hover:bg-purple-200 focus:outline-none focus-visible:ring">
+                              <span>{day}</span>
+                              <ChevronUpIcon
+                                className={`${
+                                  open ? "rotate-180 transform" : ""
+                                } h-5 w-5`}
+                              />
+                            </Disclosure.Button>
+                            <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
+                              {["Breakfast", "Lunch", "Snacks", "Dinner"].map(
+                                (meal) => (
+                                  <div
+                                    key={meal}
+                                    className="relative inline-block text-left pt-2"
+                                  >
+                                    <div className="pl-3 mr-3 mb-3 md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
+                                      {meal}
+                                      <Rating
+                                        name={`${day.toLowerCase()}-${meal.toLowerCase()}-rating`}
+                                        value={ratings[day][meal.toLowerCase()]}
+                                        onChange={(event, newValue) => {
+                                          setRatings((prevRatings) => ({
+                                            ...prevRatings,
+                                            [day]: {
+                                              ...prevRatings[day],
+                                              [meal.toLowerCase()]: newValue,
+                                            },
+                                          }));
+                                        }}
+                                      />
+                                    </div>
+                                  </div>
+                                )
+                              )}
+                            </Disclosure.Panel>
+                          </>
+                        )}
+                      </Disclosure>
+                    ))}
                   </div>
                 </div>
               </div>

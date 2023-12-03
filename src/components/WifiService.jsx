@@ -1,13 +1,36 @@
-import React from "react";
+import React,{useState} from "react";
 import Rating from "@mui/material/Rating";
 
 const WifiService = () => {
-  const [behaviorRating, setBehaviorRating] = React.useState(1);
-  const [regularityRating, setRegularityRating] = React.useState(1);
-  const [cleanlinessRating, setCleanlinessRating] = React.useState(1);
 
-
-
+  const [speedRating, setSpeedRating] = useState(1);
+  const [connectivityRating, setConnectivityRating] = useState(1);
+  const [rangeRating, setRangeRating] = useState(1);
+  
+  const [speedRatingCount, setSpeedRatingCount] = useState(0);
+  const [connectivityRatingCount, setConnectivityRatingCount] = useState(0);
+  const [rangeRatingCount, setRangeRatingCount] = useState(0);
+  
+  const handleSpeedRatingChange = (event, newValue) => {
+    setSpeedRating(newValue);
+    setSpeedRatingCount((prevCount) => prevCount + 1);
+  };
+  
+  const handleConnectivityRatingChange = (event, newValue) => {
+      setConnectivityRating(newValue);
+    setConnectivityRatingCount((prevCount) => prevCount + 1);
+  };
+  
+  const handleRangeRatingChange = (event, newValue) => {
+    setRangeRating(newValue);
+    setRangeRatingCount((prevCount) => prevCount + 1);
+  };
+  
+  // Log ratings to the console
+  console.log('Speed Rating:', speedRating, 'Count:', speedRatingCount);
+  console.log('Connectivity Rating:', connectivityRating, 'Count:', connectivityRatingCount);
+  console.log('Range Rating:', rangeRating, 'Count:', rangeRatingCount);
+  
   return (
     <section className="self-center w-full mt-10 max-md:max-w-full max-md:mt-8">
       <div className="flex max-md:flex-col max-md:items-stretch max-md:gap-0">
@@ -22,11 +45,9 @@ const WifiService = () => {
                   className="mr-3 mb-3 md:mb-0 focus:outline-none border solid focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
                     SPEED
                     <Rating
-                      name="behavior-rating"
-                      value={behaviorRating}
-                      onChange={(event, newValue) => {
-                        setBehaviorRating(newValue);
-                      }}
+                      name="speed-rating"
+                      value={speedRating}
+                      onChange={handleSpeedRatingChange}
                     />
                   </div>
                 </div>
@@ -36,11 +57,9 @@ const WifiService = () => {
                     className="mr-3 mb-3 md:mb-0 focus:outline-none border solid focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
                     CONNECTIVITY
                     <Rating
-                      name="regularity-rating"
-                      value={regularityRating}
-                      onChange={(event, newValue) => {
-                        setRegularityRating(newValue);
-                      }}
+                      name="connectivity-rating"
+                      value={connectivityRating}
+                      onChange={handleConnectivityRatingChange}
                     />
                   </div>
                 </div>
@@ -50,11 +69,9 @@ const WifiService = () => {
                     className="mr-3 mb-3 md:mb-0 focus:outline-none border solid focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
                     RANGE
                     <Rating
-                      name="cleanliness-rating"
-                      value={cleanlinessRating}
-                      onChange={(event, newValue) => {
-                        setCleanlinessRating(newValue);
-                      }}
+                      name="range-rating"
+                      value={rangeRating}
+                      onChange={handleRangeRatingChange}
                     />
                   </div>
                 </div>

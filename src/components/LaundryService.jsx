@@ -1,10 +1,35 @@
-import React from "react";
+import React,{useState} from "react";
 import Rating from "@mui/material/Rating";
 
 const LaundryService = () => {
-  const [behaviorRating, setBehaviorRating] = React.useState(1);
-  const [regularityRating, setRegularityRating] = React.useState(1);
-  const [cleanlinessRating, setCleanlinessRating] = React.useState(1);
+  const [machineConditionRating, setMachineConditionRating] = useState(1);
+  const [cleanlinessRating, setCleanlinessRating] = useState(1);
+  const [availabilityAccessibilityRating, setAvailabilityAccessibilityRating] = useState(1);
+
+  const [machineConditionRatingCount, setMachineConditionRatingCount] = useState(0);
+  const [cleanlinessRatingCount, setCleanlinessRatingCount] = useState(0);
+  const [availabilityAccessibilityRatingCount, setAvailabilityAccessibilityRatingCount] = useState(0);
+
+  const handleMachineConditionRatingChange = (_, newValue) => {
+    setMachineConditionRating(newValue);
+    setMachineConditionRatingCount((prevCount) => prevCount + 1);
+  };
+
+  const handleCleanlinessRatingChange = (_, newValue) => {
+    setCleanlinessRating(newValue);
+    setCleanlinessRatingCount((prevCount) => prevCount + 1);
+  };
+
+  const handleAvailabilityAccessibilityRatingChange = (_, newValue) => {
+    setAvailabilityAccessibilityRating(newValue);
+    setAvailabilityAccessibilityRatingCount((prevCount) => prevCount + 1);
+  };
+
+  // Log ratings to the console
+  console.log('Machine Condition Rating:', machineConditionRating, 'Count:', machineConditionRatingCount);
+  console.log('Cleanliness Rating:', cleanlinessRating, 'Count:', cleanlinessRatingCount);
+  console.log('Availability & Accessibility Rating:', availabilityAccessibilityRating, 'Count:', availabilityAccessibilityRatingCount);
+
 
 
   return (
@@ -21,26 +46,9 @@ const LaundryService = () => {
                     className="mr-3 mb-3 md:mb-0 focus:outline-none border solid focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
                     MACHINE CONDITION
                     <Rating
-                      name="behavior-rating"
-                      value={behaviorRating}
-                      onChange={(event, newValue) => {
-                        setBehaviorRating(newValue);
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className="relative inline-block text-left pt-2">
-                  <div
-                    variant="contained"
-                    className="mr-3 mb-3 md:mb-0 focus:outline-none border solid focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
-                  >
-                    REGULARITY
-                    <Rating
-                      name="regularity-rating"
-                      value={regularityRating}
-                      onChange={(event, newValue) => {
-                        setRegularityRating(newValue);
-                      }}
+                      name="machine-condition-rating"
+                      value={machineConditionRating}
+                      onChange={handleMachineConditionRatingChange}
                     />
                   </div>
                 </div>
@@ -53,9 +61,20 @@ const LaundryService = () => {
                     <Rating
                       name="cleanliness-rating"
                       value={cleanlinessRating}
-                      onChange={(event, newValue) => {
-                        setCleanlinessRating(newValue);
-                      }}
+                      onChange={handleCleanlinessRatingChange}
+                    />
+                  </div>
+                </div>
+                <div className="relative inline-block text-left pt-2">
+                  <div
+                    variant="contained"
+                    className="mr-3 mb-3 md:mb-0 focus:outline-none border solid focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+                  >
+                    AVAILABILITY & ACCESSIBILITY
+                    <Rating
+                      name="availability-accessibility-rating"
+                      value={availabilityAccessibilityRating}
+                      onChange={handleAvailabilityAccessibilityRatingChange}
                     />
                   </div>
                 </div>

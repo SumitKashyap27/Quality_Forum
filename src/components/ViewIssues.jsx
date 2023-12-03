@@ -45,7 +45,7 @@ export default function Example() {
               className={`relative flex cursor-pointer rounded-lg px-5 py-4 shadow-md focus:outline-none ${
                 selectedPlans.includes(plan)
                   ? "bg-red-900/75 text-white"
-                  : "bg-white"
+                  : "bg-green-500"
               }`}
               onClick={() => togglePlan(plan)}
             >

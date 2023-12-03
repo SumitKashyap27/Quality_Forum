@@ -1,10 +1,34 @@
-import React from "react";
+import React,{useState} from "react";
 import Rating from "@mui/material/Rating";
 
 const SweeperService = () => {
-  const [behaviorRating, setBehaviorRating] = React.useState(1);
-  const [regularityRating, setRegularityRating] = React.useState(1);
-  const [cleanlinessRating, setCleanlinessRating] = React.useState(1);
+  const [behaviorRating, setBehaviorRating] = useState(1);
+  const [regularityRating, setRegularityRating] = useState(1);
+  const [cleanlinessRating, setCleanlinessRating] = useState(1);
+
+  const [behaviorRatingCount, setBehaviorRatingCount] = useState(0);
+  const [regularityRatingCount, setRegularityRatingCount] = useState(0);
+  const [cleanlinessRatingCount, setCleanlinessRatingCount] = useState(0);
+
+  const handleBehaviorRatingChange = (event, newValue) => {
+    setBehaviorRating(newValue);
+    setBehaviorRatingCount((prevCount) => prevCount + 1);
+  };
+
+  const handleRegularityRatingChange = (event, newValue) => {
+    setRegularityRating(newValue);
+    setRegularityRatingCount((prevCount) => prevCount + 1);
+  };
+
+  const handleCleanlinessRatingChange = (event, newValue) => {
+    setCleanlinessRating(newValue);
+    setCleanlinessRatingCount((prevCount) => prevCount + 1);
+  };
+
+  // Log ratings to the console
+  console.log('Behavior Rating:', behaviorRating, 'Count:', behaviorRatingCount);
+  console.log('Regularity Rating:', regularityRating, 'Count:', regularityRatingCount);
+  console.log('Cleanliness Rating:', cleanlinessRating, 'Count:', cleanlinessRatingCount);
 
   return (
     <section className="self-center w-full mt-10 max-md:max-w-full max-md:mt-8">
@@ -14,52 +38,52 @@ const SweeperService = () => {
             <div className="flex w-[336px] max-w-full items-start gap-5 ml-4 self-start max-md:ml-2.5">
               <div className="self-stretch flex flex-col">
                 <h3 className="text-neutral-700 text-xl mb-4">GIVE RATING</h3>
-                <div className="relative inline-block text-left">
-                  <div
-                    variant="contained"
-                    className="mr-3 md:mb-0 border font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
-                  >
-                    BEHAVIOR
-                    <Rating
-                      name="behavior-rating"
-                      value={behaviorRating}
-                      onChange={(event, newValue) => {
-                        setBehaviorRating(newValue);
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className="relative inline-block text-left pt-2">
-                  <div
-                    variant="contained"
-                    className="mr-3 md:mb-0 border font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
-                  >
-                    REGULARITY
-                    <Rating
-                      name="regularity-rating"
-                      value={regularityRating}
-                      onChange={(event, newValue) => {
-                        setRegularityRating(newValue);
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className="relative inline-block text-left pt-2">
-                  <div
-                    variant="contained"
-                    color="primary"
-                    className="mr-3 border md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center focus-visible:ring focus-visible:ring-purple-500/75"
-                  >
-                    CLEANLINESS
-                    <Rating
-                      name="cleanliness-rating"
-                      value={cleanlinessRating}
-                      onChange={(event, newValue) => {
-                        setCleanlinessRating(newValue);
-                      }}
-                    />
-                  </div>
-                </div>
+                {/* Behavior Rating */}
+            <div className="relative inline-block text-left">
+              <div
+                variant="contained"
+                className="mr-3 md:mb-0 border font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
+              >
+                BEHAVIOR
+                <Rating
+                  name="behavior-rating"
+                  value={behaviorRating}
+                  onChange={handleBehaviorRatingChange}
+                />
+              </div>
+            </div>
+
+            {/* Regularity Rating */}
+            <div className="relative inline-block text-left pt-2">
+              <div
+                variant="contained"
+                className="mr-3 md:mb-0 border font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
+              >
+                REGULARITY
+                <Rating
+                  name="regularity-rating"
+                  value={regularityRating}
+                  onChange={handleRegularityRatingChange}
+                />
+              </div>
+            </div>
+
+            {/* Cleanliness Rating */}
+            <div className="relative inline-block text-left pt-2">
+              <div
+                variant="contained"
+                color="primary"
+                className="mr-3 border md:mb-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center focus-visible:ring focus-visible:ring-purple-500/75"
+              >
+                CLEANLINESS
+                <Rating
+                  name="cleanliness-rating"
+                  value={cleanlinessRating}
+                  onChange={handleCleanlinessRatingChange}
+                />
+              </div>
+            </div>
+
               </div>
             </div>
           </form>
